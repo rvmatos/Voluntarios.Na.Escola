@@ -13,5 +13,10 @@ namespace VoluntariosNaEscola.Domain
         public Endereco Endereco { get; set; }
 
         public Diretor Diretor { get; set; }
+
+        public ICollection<Supervisor> Supervisores { get; set; }
+
+        public bool AprovacaoAutomaticaVoluntarios { get; set; }
+
     }
 }

@@ -12,6 +12,8 @@ namespace VoluntariosNaEscola.Domain
 
         public Endereco Endereco { get; set; }
 
-        public List<Aprovador> Colaboradores { get; set; }
+        public ICollection<ConviteAprocao> Aprovadores { get; set; }
+
+        public bool Aprovado { get; set; }
     }
 }
