@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B89459B1-847F-4F46-B585-35B2EE994CC3}</ProjectGuid>
+    <ProjectGuid>{0310D29D-35BB-41F2-A07C-6FA1B9217768}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VoluntariosNaEscola.Domain</RootNamespace>
-    <AssemblyName>VoluntariosNaEscola.Domain</AssemblyName>
+    <RootNamespace>VoluntariosNaEscola.Model</RootNamespace>
+    <AssemblyName>VoluntariosNaEscola.Model</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,30 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Acao.cs" />
-    <Compile Include="Entities\ConviteAprocao.cs" />
-    <Compile Include="Entities\ConviteVoluntario.cs" />
-    <Compile Include="Entities\Habilidade.cs" />
-    <Compile Include="Entities\Evento.cs" />
-    <Compile Include="Entities\Supervisor.cs" />
-    <Compile Include="Entities\Diretor.cs" />
-    <Compile Include="Entities\Endereco.cs" />
-    <Compile Include="Entities\EntidadeBase.cs" />
-    <Compile Include="Entities\Escola.cs" />
-    <Compile Include="Entities\Validation\ValidationResult.cs" />
-    <Compile Include="Interfaces\Repository\Common\IReadOnlyRepository.cs" />
-    <Compile Include="Interfaces\Repository\Common\IRepository.cs" />
-    <Compile Include="Interfaces\Repository\IUsuarioRepository.cs" />
-    <Compile Include="Interfaces\Service\Common\IService.cs" />
-    <Compile Include="Interfaces\Service\IUsuarioService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Entities\Usuario.cs" />
-    <Compile Include="Entities\Voluntario.cs" />
-    <Compile Include="Services\Common\ServiceBase.cs" />
-    <Compile Include="Services\UsuarioService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interfaces\Repository\ReadOnly\" />
+    <None Include="Diagrama de Classe.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VoluntariosNaEscola.Domain\VoluntariosNaEscola.Domain.csproj">
+      <Project>{b89459b1-847f-4f46-b585-35b2ee994cc3}</Project>
+      <Name>VoluntariosNaEscola.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

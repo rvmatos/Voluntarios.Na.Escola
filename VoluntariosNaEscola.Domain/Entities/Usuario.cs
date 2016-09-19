@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoluntariosNaEscola.Domain
+namespace VoluntariosNaEscola.Domain.Entities
 {
     public class Usuario : EntidadeBase
     {
         public string Nome { get; set; }
+
+        public string Senha { get; set; }
+
         public string Email { get; set; }
         public string Telefone { get; set; }
         public int Idade { get; set; }

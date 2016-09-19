@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoluntariosNaEscola.Domain
+namespace VoluntariosNaEscola.Domain.Entities
 {
-    public class Projeto : EntidadeBase
+    public class Evento : EntidadeBase
     {
         public Usuario Criador { get; set; }
         public string Nome { get; set; }
@@ -18,6 +18,13 @@ namespace VoluntariosNaEscola.Domain
         public DateTime DtInicio { get; set; }
 
         public DateTime? DtTerminino { get; set; }
+
+        public int? NroMinimoVoluntarios { get; set; }
+
+        public int? NroMaximoVoluntarios { get; set; }
+
+        
+        public ICollection<Habilidade> HabilidadesRequeridas { get; set; }
 
         public ICollection<Supervisor> Supervisores { get; set; }
 
