@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html ng-app="appDataBase">
+<head>
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Application DataBase | Stefanini </title>
+
+    <!-- Bootstrap -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="Content/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="Content/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="Content/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="Content/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="Content/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="Content/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="Content/starrr.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="Content/animate.min.css" rel="stylesheet">
+    <link href="Content/toastr.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="Content/custom.min.css" rel="stylesheet">
+    <link href="Content/site-appdatabase.css" rel="stylesheet" />
+    <link href="Content/ngDialog-theme-default.css" rel="stylesheet" />
+    <link href="Content/ngDialog.min.css" rel="stylesheet" />
+</head>
+<body ng-controller="RootController" ng-class="userData.isUserLoggedIn ? 'nav-md' : 'login'">
+
+    <div ng-class="userData.isUserLoggedIn ? 'container body' : 'login_wrapper'">
+        <div ng-class="userData.isUserLoggedIn ? 'main_container' : 'animate form login_form'">
+            <div ng-show="userData.isUserLoggedIn" class="col-md-3 left_col" ng-include src="'Views/Shared/Menu.html'"></div>
+            <!-- top navigation -->
+            <div ng-if="userData.isUserLoggedIn" class="top_nav" ng-include src="'Views/Shared/TopNavigation.html'">
+
+            </div>
+            <!-- /top navigation -->
+            <!-- page content -->
+
+
+            <div class="right_col" role="main" ng-view="">
+
+            </div>
+
+            <!-- /page content -->
+            <!-- footer content -->
+            <footer ng-if="userData.isUserLoggedIn">
+                <div class="pull-right">
+                    Stefanini <b>©2016 All Rights Reserved. Stefanini! Privacy and Terms</b>
+                </div>
+                <div class="clearfix"></div>
+            </footer>
+            <!-- /footer content -->
+
+        </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script src="Scripts/jquery.min.js"></script>
+    <script src="Scripts/parsley.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="Scripts/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="Scripts/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="Scripts/nprogress.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="Scripts/bootstrap-progressbar.min.js"></script>
+    <!-- iCheck -->
+    <script src="Scripts/icheck.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="Scripts/moment.min.js"></script>
+    <script src="Scripts/daterangepicker.js"></script>
+    <!-- bootstrap-wysiwyg -->
+    <script src="Scripts/bootstrap-wysiwyg.min.js"></script>
+    <script src="Scripts/jquery.hotkeys.js"></script>
+    <script src="Scripts/prettify.js"></script>
+    <!-- jQuery Tags Input -->
+    <script src="Scripts/jquery.tagsinput.js"></script>
+    <!-- Switchery -->
+    <script src="Scripts/switchery.min.js"></script>
+    <!-- Select2 -->
+    <script src="Scripts/select2.full.min.js"></script>
+    <!-- Parsley -->
+    <script src="Scripts/parsley.min.js"></script>
+    <!-- Autosize -->
+    <script src="Scripts/autosize.min.js"></script>
+    <!-- jQuery autocomplete -->
+    <script src="Scripts/jquery.autocomplete.min.js"></script>
+    <script src="Scripts/toastr.js"></script>
+    <script src="Scripts/loading.js"></script>
+    <!-- starrr -->
+    <script src="Scripts/starrr.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="Scripts/custom.min.js"></script>
+    <script src="Scripts/angular.js" type="text/javascript"></script>
+    <script src="Scripts/angular-route.min.js" type="text/javascript"></script>
+    <script src="Scripts/angular-cookies.min.js" type="text/javascript"></script>
+    <script src="Scripts/angular-messages.min.js"></script>
+    <script src="Scripts/angular-file-upload.js"></script>
+    <!--Angular InitSetup-->
+    <script src="Angular/app.base.js" type="text/javascript"></script>
+    <script src="Angular/app.config.js" type="text/javascript"></script>
+    <script src="Angular/Directives/autoComplete.js"></script>
+    <script src="Angular/Directives/back.js"></script>
+    <script src="Angular/Directives/dropShowHide.js"></script>
+    <script src="Angular/Directives/angucomplete.js"></script>
+    <script src="Angular/Directives/ngEvents.js"></script>
+    <script src="Angular/Directives/formValidate.js"></script>
+    <script src="Scripts/ngDialog.min.js"></script>
+    <script src="Angular/Interceptors/loadingStatusInterceptor.js"></script>
+    <script src="Scripts/underscore-min.js"></script>
+    <!--Angular ServiceSetup-->
+    <script src="Angular/Services/AppService.js" type="text/javascript"></script>
+    <script src="Angular/Services/MembershipService.js" type="text/javascript"></script>
+    <script src="Angular/Services/ProjectService.js" type="text/javascript"></script>
+    <script src="Angular/Services/CategoryService.js" type="text/javascript"></script>
+    <script src="Angular/Services/GroupService.js" type="text/javascript"></script>
+    <script src="Angular/Services/TechnologyService.js" type="text/javascript"></script>
+    <script src="Angular/Services/ContactService.js" type="text/javascript"></script>
+    <script src="Angular/Services/NotificationService.js"></script>
+    <script src="Angular/Services/UploadService.js"></script>
+    <!--Angular ControllerSetup-->
+    <script src="Angular/Controllers/RootController.js" type="text/javascript"></script>
+    <script src="Angular/Controllers/HomeController.js" type="text/javascript"></script>
+    <script src="Angular/Controllers/LoginController.js" type="text/javascript"></script>
+
+
+    <script src="Angular/Controllers/Project/ProjectViewController.js"></script>
+    <script src="Angular/Controllers/Project/ProjectAddController.js"></script>
+    <script src="Angular/Controllers/Project/ProjectEditController.js"></script>
+
+    <script src="Angular/Controllers/Category/CategoryController.js"></script>
+    <script src="Angular/Controllers/Category/CategoryAddController.js"></script>
+    <script src="Angular/Controllers/Category/CategoryEditController.js"></script>
+    <script src="Angular/Controllers/Category/ModalCategoryAddController.js"></script>
+
+    <script src="Angular/Controllers/Group/GroupController.js"></script>
+    <script src="Angular/Controllers/Group/GroupAddController.js"></script>
+    <script src="Angular/Controllers/Group/GroupEditController.js"></script>
+    <script src="Angular/Controllers/Group/ModalGroupAddController.js"></script>
+
+    <script src="Angular/Controllers/Technology/TechnologyController.js"></script>
+    <script src="Angular/Controllers/Technology/TechnologyAddController.js"></script>
+    <script src="Angular/Controllers/Technology/TechnologyEditController.js"></script>
+    <script src="Angular/Controllers/Technology/ModalTechnologyAddController.js"></script>
+
+    <script src="Angular/Controllers/Contact/ContactController.js"></script>
+    <script src="Angular/Controllers/Contact/ContactAddController.js"></script>
+    <script src="Angular/Controllers/Contact/ContactEditController.js"></script>
+    <script src="Angular/Controllers/Contact/ModalContactAddController.js"></script>
+    <script src="Angular/Controllers/Project/UploadController.js"></script>
+    <script src="Angular/app.config.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using VoluntariosNaEscola.Domain.Entities.Validation;
+using VoluntariosNaEscola.Domain.Validations;
 
 namespace VoluntariosNaEscola.Domain.Interfaces.Service.Common
 {
@@ -14,12 +11,15 @@ namespace VoluntariosNaEscola.Domain.Interfaces.Service.Common
 
         ValidationResult Update(TEntity entity);
 
-        ValidationResult Remove(TEntity entity);
+        ValidationResult Delete(int id);
 
         IEnumerable<TEntity> GetAll(bool @readonly = false);
 
-        TEntity GetById(int idEntity);
+        TEntity Get(int idEntity);
 
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate, bool @readonly = false);
+
+        void Dispose();
+
     }
 }

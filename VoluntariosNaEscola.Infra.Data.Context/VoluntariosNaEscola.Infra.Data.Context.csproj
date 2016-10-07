@@ -53,19 +53,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config\BaseDbContext.cs" />
-    <Compile Include="Config\ContextInitializer.cs" />
+    <Compile Include="ContextManager.cs" />
     <Compile Include="Interfaces\IContextManager.cs" />
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Mapping\AcaoMap.cs" />
+    <Compile Include="Mapping\BaseMap.cs" />
+    <Compile Include="Mapping\ConviteAprovacaoMap.cs" />
+    <Compile Include="Mapping\DiretorMap.cs" />
+    <Compile Include="Mapping\EnderecoMap.cs" />
+    <Compile Include="Mapping\EscolaMap.cs" />
+    <Compile Include="Mapping\EventoMap.cs" />
+    <Compile Include="Mapping\HabilidadeMap.cs" />
+    <Compile Include="Mapping\SupervisorMap.cs" />
+    <Compile Include="Mapping\UsuarioMap.cs" />
+    <Compile Include="Mapping\VoluntarioMap.cs" />
+    <Compile Include="Migrations\201610071311512_InitializeDb.cs" />
+    <Compile Include="Migrations\201610071311512_InitializeDb.Designer.cs">
+      <DependentUpon>201610071311512_InitializeDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610071808412_UpdateUserProperty.cs" />
+    <Compile Include="Migrations\201610071808412_UpdateUserProperty.Designer.cs">
+      <DependentUpon>201610071808412_UpdateUserProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610072034460_UpdateMappings.cs" />
+    <Compile Include="Migrations\201610072034460_UpdateMappings.Designer.cs">
+      <DependentUpon>201610072034460_UpdateMappings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWork.cs" />
+    <Compile Include="VoluntariadoContext.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mapping\" />
+    <ProjectReference Include="..\VoluntariosNaEscola.Domain\VoluntariosNaEscola.Domain.csproj">
+      <Project>{b89459b1-847f-4f46-b585-35b2ee994cc3}</Project>
+      <Name>VoluntariosNaEscola.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610071311512_InitializeDb.resx">
+      <DependentUpon>201610071311512_InitializeDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610071808412_UpdateUserProperty.resx">
+      <DependentUpon>201610071808412_UpdateUserProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610072034460_UpdateMappings.resx">
+      <DependentUpon>201610072034460_UpdateMappings.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

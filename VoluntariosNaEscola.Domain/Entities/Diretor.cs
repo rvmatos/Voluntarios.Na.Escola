@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace VoluntariosNaEscola.Domain.Entities
 {
     public class Diretor : Usuario
     {
-        public Escola Escola { set; get; }
+        public Diretor()
+        {
+            Aprovadores = new HashSet<ConviteAprocao>();
+        }
+        public virtual Endereco Endereco { get; set; }
 
-        public Endereco Endereco { get; set; }
+        public int IdEndereco { get; set; }
 
         public ICollection<ConviteAprocao> Aprovadores { get; set; }
 

@@ -1,0 +1,26 @@
+﻿<section class="login_content">
+    <form id="frmLogin" name="frmLogin" form-validate data-parsley-validate="" role="form" novalidate autocomplete="off">
+        <h1>Login Form</h1>
+        <div>
+            <input type="text" name="txtUsername" class="form-control" 
+                placeholder="Username" required="" ng-model="user.username" 
+                   data-parsley-required-message="Nome do usuário é obrigatório."/>               
+        </div>
+        <div>
+            <input type="password" class="form-control" name="txtPassword"
+                   placeholder="Password" required="" ng-model="user.password"  data-parsley-required-message="Senha é obrigatório." />
+
+        </div>
+        <div>
+            <button type="submit" class="btn btn-default submit" form="frmLogin" ng-click="login(frmLogin);" ng-enter="login(frmLogin);">Log in</button>
+        </div>
+        <div class="clearfix"></div>
+        <div class="separator">
+
+            <div>
+                <h1>Stefanini</h1>
+                <p>©2016 All Rights Reserved. Stefanini! Privacy and Terms</p>
+            </div>
+        </div>
+    </form>
+</section>

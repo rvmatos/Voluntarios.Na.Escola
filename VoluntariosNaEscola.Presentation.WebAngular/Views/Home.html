@@ -1,0 +1,116 @@
+<div class="" ng-init="setPage(1)">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Projetos</h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" ng-model="txtSearch" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <a drop-show-hide class="caret">
+                        </a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="daterangepicker dropdown-menu opensright" style="top: 112px;left: 850px;display: none;">
+        <div class="ranges">
+            <div class="range_inputs">
+                <div class="col-lg-12">
+                    <div class="form-group">
+                        <label>
+                            Nome
+                        </label>
+                        <input type="text" ng-model="pesq.name" name="txtName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Descri&ccedil;&atilde;o
+                        </label>
+                        <textarea class="form-control" name="txtDescription" ng-model="pesq.description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            Categoria
+                        </label>
+                        <select class="select2_single form-control"
+                                ng-options="item.name for item in listCategory track by item.id"
+                                name="dropCategories" ng-model="pesq.category" tabindex="-1">
+                            <option></option>
+                        </select>
+                    </div>
+                    <button ng-click="search(pesq);" class="btn btn-primary">
+                        Pesquisar
+                    </button>
+                    <button type="button" ng-click="clear();" class="btn btn-info">Limpar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <div class="pull-right">
+                                <a class="btn btn-primary" href="#/project/new" data-toggle="modal" data-target=".bs-example-modal-sm">Novo Projeto</a>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 profile_details" ng-repeat="x in items | filter:txtSearch">
+                            <div class="well profile_view" style="width: 100%;">
+                                <div class="col-sm-12">
+                                    <div class="left">
+                                        <h2>{{x.name}}</h2>
+                                        <ul class="list-unstyled">
+                                            <li><i class="fa fa-file-text-o"></i> Descri&ccedil;&atilde;o: {{x.description}} </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 bottom text-center">
+                                    <div class="col-xs-12 emphasis">
+                                        <a class="btn btn-danger btn-xs" ng-click="delete(x)">
+                                            <i class="fa fa-trash-o"></i> Excluir
+                                        </a>
+                                        <a href='#/project/view/{{x.id}}' class="btn btn-success btn-xs">
+                                            <i class="fa fa-eye"> </i> Consultar
+                                        </a>
+                                        <a href='#/project/edit/{{x.id}}' class="btn btn-info btn-xs">
+                                            <i class="fa fa-pencil"> </i> Editar
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <ul ng-if="pager.pages.length" class="pagination">
+                <li ng-class="{disabled:pager.currentPage === 1}">
+                    <a class="fa fa-angle-double-left" ng-click="setPage(1)"></a>
+                </li>
+                <li ng-class="{disabled:pager.currentPage === 1}">
+                    <a class="fa fa-angle-left" ng-click="setPage(pager.currentPage - 1)"></a>
+                </li>
+                <li ng-repeat="page in pager.pages" ng-class="{active:pager.currentPage === page}">
+                    <a ng-click="setPage(page)">{{page}}</a>
+                </li>
+                <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                    <a class="fa fa-angle-right" ng-click="setPage(pager.currentPage + 1)"></a>
+                </li>
+                <li ng-class="{disabled:pager.currentPage === pager.totalPages}">
+                    <a class="fa fa-angle-double-right" ng-click="setPage(pager.totalPages)"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+

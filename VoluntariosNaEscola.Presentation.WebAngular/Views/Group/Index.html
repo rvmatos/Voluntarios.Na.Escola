@@ -1,0 +1,55 @@
+﻿
+<div class="" ng-init="loadData()">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Grupos</h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" ng-model="searchText" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" disabled type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">             
+                <div class="x_content">
+                    <div class="pull-right">                      
+                            <a class="btn btn-primary" href="#/groups/new" data-toggle="modal" data-target=".bs-example-modal-sm">Novo Grupo</a>
+                    </div>                   
+                    <!-- start project list -->
+                    <table class="table table-striped projects">
+                        <thead>
+                            <tr>
+                                <th style="width: 1%">#</th>
+                                <th >Nome</th>                               
+                                <th style="width: 20%">#Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="item in ResultData | filter:searchText">
+                            <tr>
+                                <td>#</td>
+                                <td>
+                                    {{item.name}}                                   
+                                </td>                                
+                                <td>                                   
+                                    <a href="#/groups/edit/{{item.id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Editar </a>
+                                    <a class="btn btn-danger btn-xs" ng-click="delete(item)"><i class="fa fa-trash-o"></i> Excluir</a>
+                                </td>
+                            </tr>
+                    
+                        </tbody>
+                    </table>
+                    <!-- end project list -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

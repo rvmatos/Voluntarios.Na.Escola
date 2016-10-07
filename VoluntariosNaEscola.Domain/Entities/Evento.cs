@@ -1,19 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VoluntariosNaEscola.Domain.Entities
 {
     public class Evento : EntidadeBase
     {
-        public Usuario Criador { get; set; }
+        public Evento()
+        {
+            HabilidadesRequeridas = new HashSet<Habilidade>();
+            Supervisores = new HashSet<Supervisor>();
+            Voluntarios = new HashSet<Voluntario>();
+            Acoes = new HashSet<Acao>();
+
+        }
+        public virtual Usuario Criador { get; set; }
+
+        public int IdUsuarioCriador { get; set; }
         public string Nome { get; set; }
 
         public string Descricao { get; set; }
 
-        public Escola Escola { get; set; }
+        public virtual Escola Escola { get; set; }
+
+
+        public int IdEscola { get; set; }
 
         public DateTime DtInicio { get; set; }
 
@@ -23,7 +33,6 @@ namespace VoluntariosNaEscola.Domain.Entities
 
         public int? NroMaximoVoluntarios { get; set; }
 
-        
         public ICollection<Habilidade> HabilidadesRequeridas { get; set; }
 
         public ICollection<Supervisor> Supervisores { get; set; }

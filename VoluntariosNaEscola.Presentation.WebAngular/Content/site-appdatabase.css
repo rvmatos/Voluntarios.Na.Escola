@@ -1,0 +1,84 @@
+﻿.loader-appdatabase .overlay {
+    background-color: transparent;
+    position: fixed;
+    z-index: -9999;
+    -ms-opacity: 0;
+    opacity: 0;
+    -webkit-transition: all linear 150ms;
+    -moz-transition: all linear 150ms;
+    -ms-transition: all linear 150ms;
+    -o-transition: all linear 150ms;
+    transition: all linear 150ms;
+    width: 100%;
+    height: 100%;
+}
+
+.loader-appdatabase .bubble-border {
+    width: 28px;
+    height: 28px;
+    margin: 3px;
+    float: left;
+}
+
+.loader-appdatabase.active .overlay {
+    background-color: #000000;
+    background-color: rgba(0,0,0,0.65);
+    top: 0;
+    left: 0;
+    -ms-opacity: 1;
+    opacity: 1;
+    z-index: 999999;
+}
+
+.loader-appdatabase .bubble-container {
+    top: -100px;
+    position: fixed;
+    left: 50%;
+    z-index: 999999;
+    margin-top: -13.5px;
+    margin-left: -73px;
+    -webkit-transition: all linear 150ms;
+    -moz-transition: all linear 150ms;
+    -ms-transition: all linear 150ms;
+    -o-transition: all linear 150ms;
+    transition: all linear 150ms;
+    -ms-opacity: 0;
+    opacity: 0;
+}
+
+.loader-appdatabase.active .bubble-container {
+    top: 50%;
+    -ms-opacity: 1;
+    opacity: 1;
+}
+
+.loader-appdatabase .bubble {
+    -webkit-transition: all linear 150ms;
+    -moz-transition: all linear 150ms;
+    -ms-transition: all linear 150ms;
+    -o-transition: all linear 150ms;
+    transition: all linear 150ms;
+    width: 18px;
+    height: 18px;
+    background-color: #004487;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+    margin-left: 9px;
+}
+
+.loader-appdatabase.active .bubble.active {
+    width: 28px;
+    height: 28px;
+    margin: -4.5px 4px;
+    background-color: #F08700;
+}
+
+.ngdialog.ngdialog-theme-default {
+  padding-bottom:  160px !important;
+  padding-top: 70px !important;
+}
+
+.ngdialog-theme-default.contentImportFile .ngdialog-content {
+    width: 710px !important;
+}
+

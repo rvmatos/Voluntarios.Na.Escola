@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace VoluntariosNaEscola.Domain.Entities
+﻿namespace VoluntariosNaEscola.Domain.Entities
 {
     public class Acao : EntidadeBase
     {
@@ -10,7 +8,8 @@ namespace VoluntariosNaEscola.Domain.Entities
 
         public string Objetivo { get; set; }
         
-        public Evento Evento { get; set; }
+        public virtual Evento Evento { get; set; }
 
+        public int IdEvento { get; set; }
     }
 }

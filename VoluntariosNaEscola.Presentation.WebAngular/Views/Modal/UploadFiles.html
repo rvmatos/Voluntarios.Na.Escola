@@ -1,0 +1,118 @@
+﻿<style>
+    .my-drop-zone {
+        border: dotted 3px lightgray;
+    }
+
+    .nv-file-over {
+        border: dotted 3px red;
+    }
+
+    .another-file-over-class {
+        border: dotted 3px green;
+    }
+
+    html, body {
+        height: 100%;
+    }
+</style>
+<div class="">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Importador de Arquivos</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div nv-file-drop="" uploader="uploader"
+                         filters="queueLimit, customFilter" class="container">
+                        <div class="row">
+                            <div  ng-if="action != 'V'"  class="form-group">                               
+                                <input type="file" accept="{{acceptsFiles}}" nv-file-select="" uploader="uploader" />
+                            </div>
+                            <div class="col-md-9" style="width: 100%;">
+                                <h3  ng-if="action != 'V'" >Fila Importação</h3>
+                                <p  ng-if="action != 'V'" >Tamanho da Fila: {{ uploader.queue.length }}</p>
+                                <div style="overflow-y: auto; height: 210px;">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th width="50%">Nome</th>
+                                                <th data-ng-show="uploader.isHTML5">Tamanho</th>
+                                                <th data-ng-show="uploader.isHTML5">Progresso</th>
+                                                <th>Status</th>
+                                                <th>A&ccedil;&otilde;es</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-ng-repeat="item in uploader.queue">
+
+                                                <td><strong>{{ item.file.name }}</strong></td>
+                                                <td data-ng-show="uploader.isHTML5" nowrap>
+                                                    {{ item.file.size/1024/1024|number:2 }} MB
+                                                </td>
+                                                <td data-ng-show="uploader.isHTML5">
+                                                    <div class="progress" style="margin-bottom: 0;">
+                                                        <div class="progress-bar" role="progressbar"
+                                                             data-ng-style="{ 'width': item.progress + '%' }"></div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-center">
+                                                    <span data-ng-show="item.isSuccess">
+                                                        <i class="glyphicon glyphicon-ok">
+                                                        </i>
+                                                    </span>
+                                                    <span data-ng-show="item.isError">
+                                                        <i class="glyphicon glyphicon-remove">
+                                                        </i>
+                                                    </span>
+                                                </td>
+                                                <td nowrap>
+                                                    <button ng-if="action != 'V'" type="button" class="btn btn-success btn-xs"
+                                                            data-ng-click="item.upload()" data-ng-disabled="item.isReady ||
+                                 item.isUploading || item.isSuccess || uploadSetLocation.$invalid">
+                                                        <span class="glyphicon glyphicon-upload"></span> Importar
+                                                    </button>
+                                                    <button ng-if="action != 'I'" type="button" class="btn btn-primary btn-xs"
+                                                            data-ng-click="download(item.file)">
+                                                        <span class="glyphicon glyphicons-cloud-download"></span> Baixar
+                                                    </button>
+                                                    <button ng-if="action != 'V'" type="button" class="btn btn-danger btn-xs"
+                                                            data-ng-click="removeItem(item)">
+                                                        <span class="glyphicon glyphicon-trash"></span> Remover
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <div  ng-if="action != 'V'" >
+                                        Progresso da Fila:
+                                        <div class="progress" style="">
+                                            <div class="progress-bar" role="progressbar"
+                                                 data-ng-style="{ 'width': uploader.progress + '%' }"></div>
+                                        </div>
+                                    </div>
+                                    <button ng-if="action != 'V'" type="button" class="btn btn-success btn-s"
+                                            data-ng-click="uploader.uploadAll()"
+                                            data-ng-disabled="!uploader.getNotUploadedItems().length || uploadSetLocation.$invalid">
+                                        <span class="glyphicon glyphicon-upload"></span> Importar todos
+                                    </button> 
+                                    <button ng-if="action != 'V'" type="button" class="btn btn-danger btn-s"
+                                            data-ng-click="removeAll()" data-ng-disabled="!uploader.queue.length">
+                                        <span class="glyphicon glyphicon-trash"></span> Remover todos
+                                    </button>
+                                    <button style="float:right;" type="button" class="btn btn-warning btn-s"
+                                            data-ng-click="ngDialog.close()">
+                                        <span class="glyphicon glyphicons-power"></span> Fechar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

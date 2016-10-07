@@ -30,7 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +53,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityFramework\Common\Repository.cs" />
+    <Compile Include="EntityFramework\AcaoRepository.cs" />
+    <Compile Include="EntityFramework\DiretorRepository.cs" />
+    <Compile Include="EntityFramework\EnderecoRepository.cs" />
+    <Compile Include="EntityFramework\EscolaRepository.cs" />
+    <Compile Include="EntityFramework\EventoRepository.cs" />
+    <Compile Include="EntityFramework\HabilidadeRepository.cs" />
+    <Compile Include="EntityFramework\SupervisorRepository.cs" />
+    <Compile Include="EntityFramework\VoluntarioRepository.cs" />
+    <Compile Include="EntityFramework\UsuarioRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dapper\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VoluntariosNaEscola.Domain\VoluntariosNaEscola.Domain.csproj">
+      <Project>{B89459B1-847F-4F46-B585-35B2EE994CC3}</Project>
+      <Name>VoluntariosNaEscola.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VoluntariosNaEscola.Infra.Data.Context\VoluntariosNaEscola.Infra.Data.Context.csproj">
+      <Project>{621369CF-CB8F-4C2E-8FEE-A1F9F53EC125}</Project>
+      <Name>VoluntariosNaEscola.Infra.Data.Context</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

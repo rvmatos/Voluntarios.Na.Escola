@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using VoluntariosNaEscola.Domain.Entities.Validation;
 using VoluntariosNaEscola.Domain.Interfaces.Repository.Common;
 using VoluntariosNaEscola.Domain.Interfaces.Service.Common;
+using VoluntariosNaEscola.Domain.Validations;
 
 namespace VoluntariosNaEscola.Domain.Services.Common
 {
@@ -24,11 +21,14 @@ namespace VoluntariosNaEscola.Domain.Services.Common
         {
             try
             {
-                _repo.Add(entity);
+                if (_validation.IsValid)
+                {
+                    _repo.Add(entity);
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                
+                _validation.Add(ex.Message, "Erro ao adicionar entidade", ex.StackTrace);
             }
             return _validation;
         }
@@ -43,20 +43,20 @@ namespace VoluntariosNaEscola.Domain.Services.Common
             return _repo.GetAll(@readonly);
         }
 
-        public TEntity GetById(int idEntity)
+        public TEntity Get(int idEntity)
         {
-            return _repo.GetById(idEntity);
+            return _repo.Get(idEntity);
         }
 
-        public ValidationResult Remove(TEntity entity)
+        public ValidationResult Delete(int id)
         {
             try
             {
-                _repo.Remove(entity);
+                _repo.Delete(Get(id));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _validation.Add(ex.Message, "Erro ao deletar entidade", ex.StackTrace);
             }
             return _validation;
         }
@@ -67,11 +67,16 @@ namespace VoluntariosNaEscola.Domain.Services.Common
             {
                 _repo.Update(entity);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                _validation.Add(ex.Message, "Erro ao atualizar entidade", ex.StackTrace);
             }
             return _validation;
+        }
+
+        public void Dispose()
+        {
+            _repo.Dispose();
         }
     }
 }

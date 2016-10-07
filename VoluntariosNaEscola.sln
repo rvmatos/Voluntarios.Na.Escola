@@ -27,6 +27,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Infra.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Infra.Data.Context", "VoluntariosNaEscola.Infra.Data.Context\VoluntariosNaEscola.Infra.Data.Context.csproj", "{621369CF-CB8F-4C2E-8FEE-A1F9F53EC125}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Infra.CrossCutting.InversionOfControl", "VoluntariosNaEscola.Infra.CrossCutting.InversionOfControl\VoluntariosNaEscola.Infra.CrossCutting.InversionOfControl.csproj", "{B3C71E36-3EFF-4018-AC96-6B154373B04C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Infra.CrossCutting.Logging", "VoluntariosNaEscola.Infra.CrossCutting.Logging\VoluntariosNaEscola.Infra.CrossCutting.Logging.csproj", "{0CF1C64E-CA3F-45C8-9429-683A6BB98273}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Application", "VoluntariosNaEscola.Application\VoluntariosNaEscola.Application.csproj", "{0F6F3491-D83D-425A-98A0-5BD072EDB741}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. TesteUnit", "7. TesteUnit", "{F5D96949-B6B3-4541-84BA-D68C9B05F0EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.UnitTest", "VoluntariosNaEscola.UnitTest\VoluntariosNaEscola.UnitTest.csproj", "{8A2A20DF-87FF-4A80-BD95-65FA78A5FA24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.AppService.WebApi", "VoluntariosNaEscola.AppService.WebApi\VoluntariosNaEscola.AppService.WebApi.csproj", "{DA075943-BC5C-4280-A627-FB63644458BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.AppService.Core", "VoluntariosNaEscola.AppService.Core\VoluntariosNaEscola.AppService.Core.csproj", "{C280AAB9-65A1-4D28-98F0-CD9BD848312B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 WebAngular", "1.1 WebAngular", "{B4612CDA-6454-4068-A5CE-38C95ACB9CDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Presentation.WebAngular", "VoluntariosNaEscola.Presentation.WebAngular\VoluntariosNaEscola.Presentation.WebAngular.csproj", "{7ABF83E7-723E-409C-8ED0-459BB61225F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +67,34 @@ Global
 		{621369CF-CB8F-4C2E-8FEE-A1F9F53EC125}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{621369CF-CB8F-4C2E-8FEE-A1F9F53EC125}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{621369CF-CB8F-4C2E-8FEE-A1F9F53EC125}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3C71E36-3EFF-4018-AC96-6B154373B04C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3C71E36-3EFF-4018-AC96-6B154373B04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3C71E36-3EFF-4018-AC96-6B154373B04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3C71E36-3EFF-4018-AC96-6B154373B04C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CF1C64E-CA3F-45C8-9429-683A6BB98273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CF1C64E-CA3F-45C8-9429-683A6BB98273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CF1C64E-CA3F-45C8-9429-683A6BB98273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CF1C64E-CA3F-45C8-9429-683A6BB98273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F6F3491-D83D-425A-98A0-5BD072EDB741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F6F3491-D83D-425A-98A0-5BD072EDB741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F6F3491-D83D-425A-98A0-5BD072EDB741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F6F3491-D83D-425A-98A0-5BD072EDB741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A2A20DF-87FF-4A80-BD95-65FA78A5FA24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A2A20DF-87FF-4A80-BD95-65FA78A5FA24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A2A20DF-87FF-4A80-BD95-65FA78A5FA24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A2A20DF-87FF-4A80-BD95-65FA78A5FA24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA075943-BC5C-4280-A627-FB63644458BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA075943-BC5C-4280-A627-FB63644458BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA075943-BC5C-4280-A627-FB63644458BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA075943-BC5C-4280-A627-FB63644458BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C280AAB9-65A1-4D28-98F0-CD9BD848312B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C280AAB9-65A1-4D28-98F0-CD9BD848312B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C280AAB9-65A1-4D28-98F0-CD9BD848312B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C280AAB9-65A1-4D28-98F0-CD9BD848312B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +106,13 @@ Global
 		{ED16D1A7-5D8D-46C4-9462-5CF4E7DB7BD6} = {B9EB6680-BFFF-49FA-A1D0-DA0A58588251}
 		{E84E52AA-4668-4998-B6B9-D55D74540861} = {89791F59-06CD-4741-B2CD-552D46860FF3}
 		{621369CF-CB8F-4C2E-8FEE-A1F9F53EC125} = {89791F59-06CD-4741-B2CD-552D46860FF3}
+		{B3C71E36-3EFF-4018-AC96-6B154373B04C} = {ED16D1A7-5D8D-46C4-9462-5CF4E7DB7BD6}
+		{0CF1C64E-CA3F-45C8-9429-683A6BB98273} = {ED16D1A7-5D8D-46C4-9462-5CF4E7DB7BD6}
+		{0F6F3491-D83D-425A-98A0-5BD072EDB741} = {60CDA342-C068-4B90-9971-B4212C49655F}
+		{8A2A20DF-87FF-4A80-BD95-65FA78A5FA24} = {F5D96949-B6B3-4541-84BA-D68C9B05F0EA}
+		{DA075943-BC5C-4280-A627-FB63644458BA} = {BE2F6193-809B-422C-A17F-B04CAA23EA6C}
+		{C280AAB9-65A1-4D28-98F0-CD9BD848312B} = {BE2F6193-809B-422C-A17F-B04CAA23EA6C}
+		{B4612CDA-6454-4068-A5CE-38C95ACB9CDE} = {72D09955-ADFD-48BE-8DB3-98389D9BF652}
+		{7ABF83E7-723E-409C-8ED0-459BB61225F3} = {B4612CDA-6454-4068-A5CE-38C95ACB9CDE}
 	EndGlobalSection
 EndGlobal
