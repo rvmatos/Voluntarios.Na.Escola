@@ -3,7 +3,7 @@
 appDataBase.constant('Constants',
 
     {
-        HostHttp: 'http://localhost/appdatabase/service/api/',
+        HostHttp: 'http://localhost/voluntariosnaweb/api/',
         DevelopmentType: [
            { id: 0, name: "" },
             { id: 1, name: "Serviço", },

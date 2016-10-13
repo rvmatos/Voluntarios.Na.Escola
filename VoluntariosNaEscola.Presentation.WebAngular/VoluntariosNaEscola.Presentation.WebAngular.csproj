@@ -16,7 +16,7 @@
     <RootNamespace>VoluntariosNaEscola.Presentation.WebAngular</RootNamespace>
     <AssemblyName>VoluntariosNaEscola.Presentation.WebAngular</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -71,6 +71,7 @@
     <Content Include="Angular\Controllers\Technology\TechnologyAddController.js" />
     <Content Include="Angular\Controllers\Technology\TechnologyController.js" />
     <Content Include="Angular\Controllers\Technology\TechnologyEditController.js" />
+    <Content Include="Angular\Controllers\User\UsuarioController.js" />
     <Content Include="Angular\Directives\angucomplete.js" />
     <Content Include="Angular\Directives\autoComplete.js" />
     <Content Include="Angular\Directives\back.js" />
@@ -87,6 +88,7 @@
     <Content Include="Angular\Services\ProjectService.js" />
     <Content Include="Angular\Services\TechnologyService.js" />
     <Content Include="Angular\Services\UploadService.js" />
+    <Content Include="Angular\Services\UsuarioService.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -901,6 +903,7 @@
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
     <Content Include="Scripts\icheck.js" />
     <Content Include="Scripts\icheck.min.js" />
+    <Content Include="Scripts\jQuery-Smart-Wizard\jquery.smartWizard.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.autocomplete.js" />
     <Content Include="Scripts\jquery.autocomplete.min.js" />
@@ -945,6 +948,7 @@
     <Content Include="Views\Shared\TopNavigation.html" />
     <Content Include="Views\Technology\Edit.html" />
     <Content Include="Views\Technology\Index.html" />
+    <Content Include="Views\User\Register.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\FileInfo\" />
@@ -985,6 +989,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -1000,7 +1013,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52007</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52007/</IISUrl>
+          <IISUrl>http://localhost/voluntariosnaescola/web/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

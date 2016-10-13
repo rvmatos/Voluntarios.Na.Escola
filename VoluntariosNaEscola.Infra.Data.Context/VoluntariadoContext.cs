@@ -26,9 +26,9 @@ namespace VoluntariosNaEscola.Infra.Data.Context
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
 
-            modelBuilder.Properties()
-                .Where(p => p.Name == "Id")
-                .Configure(p => p.IsKey());
+            //modelBuilder.Properties()
+            //    .Where(p => p.Name == "Id")
+            //    .Configure(p => p.IsKey());
 
             modelBuilder.Properties<string>()
                 .Configure(p => p.HasColumnType("varchar"));
@@ -41,7 +41,7 @@ namespace VoluntariosNaEscola.Infra.Data.Context
 
            
 
-            modelBuilder.Configurations.Add(new UsuarioMap());
+           
             modelBuilder.Configurations.Add(new AcaoMap());
             modelBuilder.Configurations.Add(new DiretorMap());
             modelBuilder.Configurations.Add(new EnderecoMap());
@@ -50,6 +50,7 @@ namespace VoluntariosNaEscola.Infra.Data.Context
             modelBuilder.Configurations.Add(new HabilidadeMap());
             modelBuilder.Configurations.Add(new SupervisorMap());
             modelBuilder.Configurations.Add(new VoluntarioMap());
+            modelBuilder.Configurations.Add(new UsuarioMap());
             modelBuilder.Configurations.Add(new ConviteAprovacaoMap());
             base.OnModelCreating(modelBuilder);
 

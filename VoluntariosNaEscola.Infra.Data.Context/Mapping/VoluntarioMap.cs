@@ -5,14 +5,16 @@ namespace VoluntariosNaEscola.Infra.Data.Context.Mapping
 {
     public class VoluntarioMap : EntityTypeConfiguration<Voluntario>
     {
-        public VoluntarioMap() : base()
+        public VoluntarioMap()
         {
+            this.ToTable("Voluntarios");
             HasKey(x => x.Id);
             this.Property(x => x.Id).HasColumnName("IdUsuario");
+            //Requires("Tipo").HasValue("V");
             HasRequired(p => p.Endereco)
                .WithMany()
                .HasForeignKey(p => p.IdEndereco);
-
+          
 
             HasMany(s => s.Escolas)
               .WithMany(c => c.Voluntarios)
@@ -33,7 +35,7 @@ namespace VoluntariosNaEscola.Infra.Data.Context.Mapping
                 cs.ToTable("EventoVoluntario");
             });
 
-            this.ToTable("Voluntarios");
+          
         }
     }
 }

@@ -33,7 +33,7 @@ namespace VoluntariosNaEscola.AppService.WebApi.Authorization
                 context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
                 var user = context.UserName;
                 var password = context.Password;
-                var usuario = await Task.Run(() => _usuarioApp.Find(x => x.Email == user && x.Senha == password).FirstOrDefault());
+                var usuario = await Task.Run(() => _usuarioApp.Find(x => x.Apelido == user && x.Senha == password).FirstOrDefault());
                 if (usuario == null)
                 {
                     context.SetError("404", "Usuário ou senha inválidos");
@@ -43,7 +43,7 @@ namespace VoluntariosNaEscola.AppService.WebApi.Authorization
                 var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
                     {
-                        "username", usuario.Email
+                        "username", usuario.Apelido
                     },
                     {
                         "userid", usuario.Id.ToString()

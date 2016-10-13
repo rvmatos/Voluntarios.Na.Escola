@@ -1,0 +1,173 @@
+﻿<section class="login_content">
+
+    <h1>Criar conta</h1>
+    <div ng-init="usuario.isVoluntario=true" style="margin-bottom:20px">
+
+
+        <div id="gender2" class="btn-group" style="width:100%" data-toggle="buttons">
+            <label class="btn btn-default active" ng-click="usuario.isVoluntario=true" style="width:50%" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                <input type="radio" name="gender" value="voluntario"> &nbsp; Voluntário &nbsp;
+            </label>
+            <label class="btn btn-primary" ng-click="usuario.isVoluntario=false" style="width:50%" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                <input type="radio" name="gender" value="escola" checked=""> Escola
+            </label>
+        </div>
+
+
+    </div>
+    <div id="wizard_verticle" class="form_wizard wizard_verticle">
+        <ul class="list-unstyled wizard_steps">
+            <li>
+                <a href="#step-11">
+                    <span class="step_no">1</span>
+                </a>
+            </li>
+            <li>
+                <a href="#step-22">
+                    <span class="step_no">2</span>
+                </a>
+            </li>
+            <li>
+                <a href="#step-33">
+                    <span class="step_no">3</span>
+                </a>
+            </li>
+
+        </ul>
+        <div id="step-11">
+            <form id="frmLoginDadosPessoais" name="frmLoginDadosPessoais" autocomplete="off">
+                <h2 class="StepTitle">Dados Pessoais</h2>
+
+                <div ng-if="usuario.isVoluntario">
+                    <div>
+                        <input type="text" class="form-control" placeholder="Nome" ng-model="usuario.nome" required="" />
+                    </div>
+                </div>
+                <div ng-if="!usuario.isVoluntario">
+                    <div>
+                        <input type="text" class="form-control" placeholder="Nome Escola" ng-model="usuario.nomeEscola" required="" />
+                    </div>
+                    <div>
+                        <input type="text" class="form-control" placeholder="Nome Diretor" ng-model="usuario.nomeDiretor" required="" />
+                    </div>
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Telefone" ng-model="usuario.telefone" required="" />
+                </div>
+                <div ng-if="usuario.isVoluntario">
+                    <input type="text" class="form-control" placeholder="Profissão" ng-model="usuario.profissao" required="" />
+                </div>
+            </form>
+        </div>
+        <div id="step-22">
+            <form id="frmLoginEndereco" name="frmLoginEndereco" autocomplete="off">
+                <h2 class="StepTitle">Endere&ccedil;o {{usuario.isVoluntario ? '' : 'da Escola'}}</h2>
+                <div>
+                    <input type="text" class="form-control" placeholder="Endereço" ng-model="usuario.endereco.rua" required="" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Complemento" ng-model="usuario.endereco.complemento" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Cep" ng-model="usuario.endereco.cep" required="" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Cidade" ng-model="usuario.endereco.cidade" required="" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" placeholder="Sigla Estado" ng-model="usuario.endereco.estado" required="" />
+                </div>
+            </form>
+        </div>
+        <div id="step-33">
+            <h2 class="StepTitle">Autentica&ccedil;&atilde;o</h2>
+            <form id="frmLoginDadosAutenticacao" name="frmLoginDadosAutenticacao" autocomplete="off">
+                <div>
+                    <input type="text" class="form-control" placeholder="Apelido" ng-model="usuario.apelido" required="" />
+                </div>
+                <div>
+                    <input type="email" class="form-control" placeholder="Email" ng-model="usuario.email" required="" />
+                </div>
+                <div>
+                    <input type="password" class="form-control" placeholder="Senha" ng-model="usuario.senha" required="" />
+                </div>
+                <div>
+                    <input type="password" class="form-control" placeholder="Confirma Senha" ng-model="usuario.confirmaSenha" required="" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <input type="button" id="btnCreate" ng-click="create(usuario)" style="display:none;" />
+
+    <div class="clearfix"></div>
+    <div class="separator">
+        <p class="change_link">
+            Já possui cadastro?
+            <a href="#/login" class="to_register"> Log in </a>
+        </p>
+        <div class="clearfix"></div>
+        <br />
+        <div>
+            <h1>Volunt&aacute;rios na Escola!</h1>
+            <p>©2016 Todos os direitos Reservados. DoubleSilva!</p>
+        </div>
+    </div>
+
+</section>
+<script>
+    $(document).ready(function () {
+        $('#wizard_verticle').smartWizard({
+            onLeaveStep: leaveAStepCallback,
+            onFinish: onFinishCallback,
+            labelNext: 'Próximo',
+            labelPrevious: 'Anterior',
+            labelFinish: 'Salvar',
+            transitionEffect: 'slide'
+        });
+
+
+        $('.buttonNext').addClass('btn btn-success');
+        $('.buttonPrevious').addClass('btn btn-primary');
+        $('.buttonFinish').addClass('btn btn-default');
+
+        function leaveAStepCallback(obj, context) {
+            // alert("Leaving step " + context.fromStep + " to go to step " + context.toStep);
+            return validateSteps(context.fromStep); // return false to stay on step and true to continue navigation
+        }
+
+        function onFinishCallback(objs, context) {
+            if (validateAllSteps()) {
+                $('#btnCreate').trigger('click');
+            }
+        }
+
+        // Your Step validation logic
+        function validateSteps(stepnumber) {
+            var isStepValid = true;
+            // validate step 1
+            if (stepnumber == 1 && !$('#frmLoginDadosPessoais')[0].checkValidity()) {
+                // Your step validation logic
+                // set isStepValid = false if has errors
+                isStepValid = false;
+            }
+            else if (stepnumber == 2 && !$('#frmLoginEndereco')[0].checkValidity()) {
+                // Your step validation logic
+                // set isStepValid = false if has errors
+                isStepValid = false;
+            }
+            else if (stepnumber == 3 && !$('#frmLoginDadosAutenticacao')[0].checkValidity()) {
+                isStepValid = false;
+            }
+            return isStepValid;
+        }
+        function validateAllSteps() {
+            var isStepValid = true;
+            // all step validation logic
+            if (!$('#frmLoginDadosPessoais')[0].checkValidity() || !$('#frmLoginEndereco')[0].checkValidity() || !$('#frmLoginDadosAutenticacao')[0].checkValidity())
+                isStepValid = false;
+            return isStepValid;
+        }
+    });
+</script>

@@ -68,17 +68,13 @@
     <Compile Include="Mapping\SupervisorMap.cs" />
     <Compile Include="Mapping\UsuarioMap.cs" />
     <Compile Include="Mapping\VoluntarioMap.cs" />
-    <Compile Include="Migrations\201610071311512_InitializeDb.cs" />
-    <Compile Include="Migrations\201610071311512_InitializeDb.Designer.cs">
-      <DependentUpon>201610071311512_InitializeDb.cs</DependentUpon>
+    <Compile Include="Migrations\201610111546454_RefreshMapping.cs" />
+    <Compile Include="Migrations\201610111546454_RefreshMapping.Designer.cs">
+      <DependentUpon>201610111546454_RefreshMapping.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610071808412_UpdateUserProperty.cs" />
-    <Compile Include="Migrations\201610071808412_UpdateUserProperty.Designer.cs">
-      <DependentUpon>201610071808412_UpdateUserProperty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610072034460_UpdateMappings.cs" />
-    <Compile Include="Migrations\201610072034460_UpdateMappings.Designer.cs">
-      <DependentUpon>201610072034460_UpdateMappings.cs</DependentUpon>
+    <Compile Include="Migrations\201610131404514_AtualizaPropriedades.cs" />
+    <Compile Include="Migrations\201610131404514_AtualizaPropriedades.Designer.cs">
+      <DependentUpon>201610131404514_AtualizaPropriedades.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,14 +95,11 @@
     <Folder Include="Config\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610071311512_InitializeDb.resx">
-      <DependentUpon>201610071311512_InitializeDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610111546454_RefreshMapping.resx">
+      <DependentUpon>201610111546454_RefreshMapping.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610071808412_UpdateUserProperty.resx">
-      <DependentUpon>201610071808412_UpdateUserProperty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610072034460_UpdateMappings.resx">
-      <DependentUpon>201610072034460_UpdateMappings.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610131404514_AtualizaPropriedades.resx">
+      <DependentUpon>201610131404514_AtualizaPropriedades.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

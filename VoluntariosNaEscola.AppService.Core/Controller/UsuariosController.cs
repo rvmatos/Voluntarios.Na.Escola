@@ -17,13 +17,13 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
         private readonly IUsuarioApplication _application;
         public UsuariosController(IUsuarioApplication application) : base(application)
         {
-            
+            _application = application;
         }
 
-        [HttpPost]
+        [HttpGet]
         public HttpResponseMessage Autenticar(string usuario, string senha)
         {
-           var result =  _application.Find(x => x.Email == usuario && x.Senha == senha).FirstOrDefault();
+           var result =  _application.Find(x => x.Apelido == usuario && x.Senha == senha).FirstOrDefault();
 
             if (result != null)
             {

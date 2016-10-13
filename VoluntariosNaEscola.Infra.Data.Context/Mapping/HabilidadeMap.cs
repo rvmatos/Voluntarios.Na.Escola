@@ -3,10 +3,17 @@ using VoluntariosNaEscola.Domain.Entities;
 
 namespace VoluntariosNaEscola.Infra.Data.Context.Mapping
 {
-    public class HabilidadeMap : BaseMapping<Habilidade>
+    public class HabilidadeMap : EntityTypeConfiguration<Habilidade>
     {
-        public HabilidadeMap() : base()
+        public HabilidadeMap()
         {
+            HasKey(x => x.Id);
+            Ignore(p => p.Excluido);
+            Map(p =>
+            {
+                p.Requires("Excluido").HasValue(false);
+            });
+
             HasMany(s => s.Eventos)
              .WithMany(c => c.HabilidadesRequeridas)
              .Map(cs =>

@@ -3,11 +3,17 @@ using VoluntariosNaEscola.Domain.Entities;
 
 namespace VoluntariosNaEscola.Infra.Data.Context.Mapping
 {
-    public class EscolaMap : BaseMapping<Escola>
+    public class EscolaMap : EntityTypeConfiguration<Escola>
     {
         public EscolaMap() : base()
         {
-            
+            HasKey(x => x.Id);
+            Ignore(p => p.Excluido);
+            Map(p =>
+            {
+                p.Requires("Excluido").HasValue(false);
+            });
+
             HasRequired(p => p.Diretor)
                .WithMany()
                .HasForeignKey(p => p.IdDiretor);

@@ -28,11 +28,13 @@ namespace VoluntariosNaEscola.Infra.Data.Repository.EntityFramework.Common
         public virtual void Add(TEntity entity)
         {
             DbSet.Add(entity);
+            Context.SaveChanges();
         }
 
         public virtual void Delete(TEntity entity)
         {
             DbSet.Remove(entity);
+            Context.SaveChanges();
         }
 
         public virtual TEntity Get(int id)
@@ -46,6 +48,7 @@ namespace VoluntariosNaEscola.Infra.Data.Repository.EntityFramework.Common
             var entry = Context.Entry(entity);
             DbSet.Attach(entity);
             entry.State = EntityState.Modified;
+            Context.SaveChanges();
             //Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
         }
 

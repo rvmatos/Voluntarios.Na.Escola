@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="appDataBase">
+<html lang="pt-BR" ng-app="appDataBase">
 <head>
     <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     Meta, title, CSS, favicons, etc. -->
@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Application DataBase | Stefanini </title>
+    <title>Voluntários na Escola | DoubleSilva </title>
 
     <!-- Bootstrap -->
     <link href="Content/bootstrap.min.css" rel="stylesheet">
@@ -56,7 +56,8 @@
             <!-- footer content -->
             <footer ng-if="userData.isUserLoggedIn">
                 <div class="pull-right">
-                    Stefanini <b>©2016 All Rights Reserved. Stefanini! Privacy and Terms</b>
+                    Volunt&aacute;rios na Escola <b>>©2016 Todos os direitos Reservados. DoubleSilva!</b>
+
                 </div>
                 <div class="clearfix"></div>
             </footer>
@@ -102,6 +103,8 @@
     <script src="Scripts/loading.js"></script>
     <!-- starrr -->
     <script src="Scripts/starrr.js"></script>
+
+    <script src="Scripts/jQuery-Smart-Wizard/jquery.smartWizard.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="Scripts/custom.min.js"></script>
     <script src="Scripts/angular.js" type="text/javascript"></script>
@@ -124,7 +127,7 @@
     <!--Angular ServiceSetup-->
     <script src="Angular/Services/AppService.js" type="text/javascript"></script>
     <script src="Angular/Services/MembershipService.js" type="text/javascript"></script>
-    <script src="Angular/Services/ProjectService.js" type="text/javascript"></script>
+    <script src="Angular/Services/UsuarioService.js" type="text/javascript"></script>
     <script src="Angular/Services/CategoryService.js" type="text/javascript"></script>
     <script src="Angular/Services/GroupService.js" type="text/javascript"></script>
     <script src="Angular/Services/TechnologyService.js" type="text/javascript"></script>
@@ -135,7 +138,7 @@
     <script src="Angular/Controllers/RootController.js" type="text/javascript"></script>
     <script src="Angular/Controllers/HomeController.js" type="text/javascript"></script>
     <script src="Angular/Controllers/LoginController.js" type="text/javascript"></script>
-
+    <script src="Angular/Controllers/User/UsuarioController.js"></script>
 
     <script src="Angular/Controllers/Project/ProjectViewController.js"></script>
     <script src="Angular/Controllers/Project/ProjectAddController.js"></script>

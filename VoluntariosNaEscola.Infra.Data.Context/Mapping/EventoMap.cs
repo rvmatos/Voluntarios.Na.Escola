@@ -3,10 +3,17 @@ using VoluntariosNaEscola.Domain.Entities;
 
 namespace VoluntariosNaEscola.Infra.Data.Context.Mapping
 {
-    public class EventoMap : BaseMapping<Evento>
+    public class EventoMap : EntityTypeConfiguration<Evento>
     {
         public EventoMap() : base()
-        {           
+        {
+            HasKey(x => x.Id);
+            Ignore(p => p.Excluido);
+            Map(p =>
+            {
+                p.Requires("Excluido").HasValue(false);
+            });
+
             HasRequired(p => p.Criador)
                .WithMany()
                .HasForeignKey(p => p.IdUsuarioCriador);

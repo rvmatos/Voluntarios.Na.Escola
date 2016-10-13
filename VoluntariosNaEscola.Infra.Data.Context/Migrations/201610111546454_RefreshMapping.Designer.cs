@@ -7,13 +7,13 @@ namespace VoluntariosNaEscola.Infra.Data.Context.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitializeDb : IMigrationMetadata
+    public sealed partial class RefreshMapping : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitializeDb));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RefreshMapping));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610071311512_InitializeDb"; }
+            get { return "201610111546454_RefreshMapping"; }
         }
         
         string IMigrationMetadata.Source

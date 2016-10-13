@@ -7,13 +7,13 @@ namespace VoluntariosNaEscola.Infra.Data.Context.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class UpdateUserProperty : IMigrationMetadata
+    public sealed partial class AtualizaPropriedades : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateUserProperty));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AtualizaPropriedades));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610071808412_UpdateUserProperty"; }
+            get { return "201610131404514_AtualizaPropriedades"; }
         }
         
         string IMigrationMetadata.Source
