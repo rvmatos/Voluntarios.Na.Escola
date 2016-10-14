@@ -6,5 +6,6 @@ namespace VoluntariosNaEscola.Domain.Interfaces.Application
 {
     public interface IDiretorApplication : IDisposable, IApplication<Diretor>
     {
+        bool IsDiretor(int id);
     }
 }

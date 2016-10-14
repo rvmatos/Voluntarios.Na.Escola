@@ -70,7 +70,7 @@ namespace VoluntariosNaEscola.AppService.WebApi
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/api/security/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(8),
-                Provider = new AuthorizationServerProvider(_kernel.Get<IUsuarioApplication>())
+                Provider = new AuthorizationServerProvider(_kernel.Get<IUsuarioApplication>(), _kernel.Get<ISupervisorApplication>(), _kernel.Get<IDiretorApplication>(), _kernel.Get<IVoluntarioApplication>())
             };
 
             app.UseOAuthAuthorizationServer(OAuthServerOptions);

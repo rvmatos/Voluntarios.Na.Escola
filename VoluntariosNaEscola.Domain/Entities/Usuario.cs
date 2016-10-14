@@ -10,7 +10,7 @@ namespace VoluntariosNaEscola.Domain.Entities
         public string Email { get; set; }
         public string Telefone { get; set; }
         public DateTime? DtNascimento { get; set; }
-        public string Profissao { get; set; }
+        public string Profissao { get; set; }     
 
        
     }

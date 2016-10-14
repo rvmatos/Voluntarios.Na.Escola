@@ -15,10 +15,17 @@ namespace VoluntariosNaEscola.AppService.WebApi.Authorization
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
         private readonly IUsuarioApplication _usuarioApp;
+        private readonly ISupervisorApplication  _supervisorApp;
+        private readonly IDiretorApplication _diretorApp;
+        private readonly IVoluntarioApplication _voluntarioApp;
 
-        public AuthorizationServerProvider(IUsuarioApplication usuarioApp)
+        public AuthorizationServerProvider(IUsuarioApplication usuarioApp, ISupervisorApplication supervisorApp,
+                                           IDiretorApplication diretorApp, IVoluntarioApplication voluntarioApp)
         {
             _usuarioApp = usuarioApp;
+            _supervisorApp = supervisorApp;
+            _diretorApp = diretorApp;
+            _voluntarioApp = voluntarioApp;
         }
 
         public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context)
@@ -40,6 +47,11 @@ namespace VoluntariosNaEscola.AppService.WebApi.Authorization
                     return;
                 }
 
+
+                bool isSupervisor = _supervisorApp.IsSupervisor(usuario.Id);
+                bool isDiretor = _diretorApp.IsDiretor(usuario.Id);
+                bool isVoluntario = _voluntarioApp.IsVoluntario(usuario.Id);
+
                 var props = new AuthenticationProperties(new Dictionary<string, string>
                 {
                     {
@@ -50,8 +62,23 @@ namespace VoluntariosNaEscola.AppService.WebApi.Authorization
                     },
                     {
                        "name", usuario.Nome
+                    },
+                    {
+                        "isAdmin", (!isSupervisor && !isDiretor && !isVoluntario).ToString()
+                    },
+                    {
+                        "isSupervisor", (isSupervisor).ToString()
+                    },
+                    {
+                        "isDiretor", (isDiretor).ToString()
+                    },
+                    {
+                        "isVoluntario", (isVoluntario).ToString()
                     }
+
+
                 });
+
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim(ClaimTypes.Name, usuario.Nome));

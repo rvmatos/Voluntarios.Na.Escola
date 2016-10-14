@@ -11,7 +11,7 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
 {
     public class VoluntariosController : BaseController<Voluntario>, IVoluntarioAppService
     {
-        private IVoluntarioApplication _app;
+        private readonly IVoluntarioApplication _app;
         public VoluntariosController(IVoluntarioApplication app) : base(app)
         {
             _app = app;

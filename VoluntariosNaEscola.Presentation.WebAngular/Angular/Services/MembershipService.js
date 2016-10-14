@@ -30,7 +30,12 @@ function membershipService(apiService, Constants, $http, $cookieStore, $rootScop
         $rootScope.repository = {
             loggedUser: {
                 username: data.username,
+                userid: data.userid,
                 name: data.name,
+                isAdmin: data.isAdmin,
+                isSupervisor: data.isSupervisor,
+                isDiretor: data.isDiretor,
+                isVoluntario: data.isVoluntario,
                 authdata: membershipData
             }
         };

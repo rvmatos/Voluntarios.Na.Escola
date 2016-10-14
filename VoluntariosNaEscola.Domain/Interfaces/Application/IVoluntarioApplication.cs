@@ -6,5 +6,6 @@ namespace VoluntariosNaEscola.Domain.Interfaces.Application
 {
     public interface IVoluntarioApplication : IDisposable, IApplication<Voluntario>
     {
+        bool IsVoluntario(int id);
     }
 }

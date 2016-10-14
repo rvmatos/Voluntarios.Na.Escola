@@ -11,5 +11,18 @@ namespace VoluntariosNaEscola.Application
         {
             _service = service;
         }
+
+        public bool IsSupervisor(int id)
+        {
+            try
+            {
+                return _service.Get(id) != null;
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
+
     }
 }
