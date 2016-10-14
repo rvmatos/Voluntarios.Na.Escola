@@ -23,10 +23,20 @@ function loginCtrl($scope, membershipService, $rootScope, $location, notificatio
             $scope.user.nome = result.data.username;
             membershipService.saveCredentials(result.data);
             $scope.userData.displayUserInfo();
+            
+
             if ($rootScope.previousState)
                 $location.path($rootScope.previousState);
-            else
-                $location.path('/');
+            else {
+                if ($scope.userData.isAdmin) {
+                    $location.path('/');
+                }
+                else if($scope.userData.isVoluntario)
+                {
+                    $location.path('#/voluntario-home');
+                }
+                else $location.path('#/escola-home');
+            }
         }
         else
             notificationService.displayError('Falha ao autenticar, tente novamente.');

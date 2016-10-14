@@ -72,6 +72,7 @@
     <Content Include="Angular\Controllers\Technology\TechnologyController.js" />
     <Content Include="Angular\Controllers\Technology\TechnologyEditController.js" />
     <Content Include="Angular\Controllers\User\UsuarioController.js" />
+    <Content Include="Angular\Controllers\Voluntario\HomeController.js" />
     <Content Include="Angular\Directives\angucomplete.js" />
     <Content Include="Angular\Directives\autoComplete.js" />
     <Content Include="Angular\Directives\back.js" />
@@ -89,6 +90,7 @@
     <Content Include="Angular\Services\TechnologyService.js" />
     <Content Include="Angular\Services\UploadService.js" />
     <Content Include="Angular\Services\UsuarioService.js" />
+    <Content Include="Angular\Services\VoluntarioService.js" />
     <Content Include="Content\animate.css" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -990,6 +992,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Views\Voluntario\Index.html" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
