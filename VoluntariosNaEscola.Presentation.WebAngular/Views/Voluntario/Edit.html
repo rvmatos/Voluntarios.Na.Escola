@@ -1,0 +1,113 @@
+﻿<div class="">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Volunt&aacute;rio > Editar</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <br />
+                    <form id="frmEditvoluntarios" name="frmEditvoluntarios" form-validate data-parsley-validate="" novalidate class="form-horizontal form-label-left">
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                Nome <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" ng-model="entity.nome" id="voluntarioName" name="voluntarioName" class="form-control col-md-7 col-xs-12" required=""
+                                       data-parsley-required-message="Nome é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioEmail">
+                                Email <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" name="voluntarioEmail" id="voluntarioEmail" required="" ng-model="entity.email" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Email é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioCompany">
+                                Profiss&atilde;o <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="voluntarioCompany" required="required" ng-model="entity.profissao" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Profissão é obrigatória." />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioRamal">
+                                Telefone<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" id="voluntarioRamal" data-inputmask="'mask' : '(99) 9999 9999'" ng-model="entity.telefone" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioRua">
+                                Rua<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" id="voluntarioRua" data-parsley-required-message="Rua é obrigatória." required="required" ng-model="entity.endereco.rua" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioComplemento">
+                                Complemento
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="tel" id="voluntarioOccupation" ng-model="entity.endereco.complemento" class="form-control col-md-7 col-xs-12" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioCidade">
+                                Cidade<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" id="voluntarioCidade" data-parsley-required-message="Cidade é obrigatória." required="required" ng-model="entity.endereco.cidade" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioEstado">
+                                Estado<span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" id="voluntarioEstado" data-parsley-required-message="Estado é obrigatória." required="required" ng-model="entity.endereco.estado" class="form-control col-md-7 col-xs-12">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group" ng-if="userLogged.isAdmin == 'True'">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="">
+                                    <label>
+                                        <input type="checkbox" class="js-switch" ng-model="entity.ativo" ng-checked="entity.ativo" /> Ativo
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-if="userLogged.isAdmin == 'True'">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="">
+                                    <label>
+                                        <input type="checkbox" class="js-switch" ng-model="entity.ativo" ng-checked="entity.excluido" /> Excluido
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <a back name="btnCancelar" class="btn btn-primary">Cancelar</a>
+                                <button ng-click="Save(frmEditvoluntarios);" class="btn btn-success">Salvar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

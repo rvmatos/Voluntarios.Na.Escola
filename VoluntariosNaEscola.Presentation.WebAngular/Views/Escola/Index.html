@@ -2,8 +2,8 @@
 <div class="" ng-init="loadProfile()">
     <div class="page-title">
         <div class="title_left">
-            <h3>Bem-vindo Volunt&aacute;rio</h3>
-        </div>        
+            <h3>Bem-vindo Diretor</h3>
+        </div>
     </div>
 
     <div class="clearfix"></div>
@@ -37,24 +37,24 @@
                     <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
                         <!--<div class="profile_img">
                             <div id="crop-avatar">
-                                 Current avatar 
+                                 Current avatar
                                 <img class="img-responsive avatar-view" src="images/picture.jpg" alt="Avatar" title="Change the avatar">
                             </div>
                         </div>-->
-                        <h3>{{voluntario.nome}}</h3>
+                        <h3>{{escola.nome}}</h3>
                         <ul class="list-unstyled user_data">
                             <li>
-                                <i class="fa fa-map-marker user-profile-icon"></i> {{voluntario.endereco.cidade}}/{{voluntario.endereco.estado}}, USA
+                                <i class="fa fa-map-marker user-profile-icon"></i> {{escola.endereco.cidade}}/{{voluntario.endereco.estado}}, USA
                             </li>
                             <li>
-                                <i class="fa fa-briefcase user-profile-icon"></i> {{voluntario.profissao}}
+                                <i class="fa fa-briefcase user-profile-icon"></i> {{escola.diretor.nome}}
                             </li>
                             <li class="m-top-xs">
                                 <i class="fa fa-external-link user-profile-icon"></i>
-                                {{voluntario.email}}
+                                {{escola.diretor.email}}
                             </li>
                         </ul>
-                        <a class="btn btn-success" href="#/voluntario/edit/{{voluntario.id}}"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                        <a class="btn btn-success" href="#/escola/edit/{{escola.id}}"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
                         <br />
                         <!-- start skills -->
                         <h4>Habilidades</h4>
@@ -123,17 +123,17 @@
                                             <div class="message_wrapper">
                                                 <h4 class="heading">{{evento.nome}}</h4>
                                                 <blockquote class="message">{{evento.descricao}}</blockquote>
-                                                <br />                                               
+                                                <br />
                                             </div>
                                         </li>
                                     </ul>
                                     <!-- end recent activity -->
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                    
+
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                                 
+
                                 </div>
                             </div>
                         </div>

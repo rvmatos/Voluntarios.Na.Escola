@@ -23,11 +23,28 @@ function config($routeProvider, $httpProvider) {
             templateUrl: './Views/User/Register.html',
             controller: 'UsuarioController'
         })
-        //.when('/project/edit/:id', {
-        //    templateUrl: './Views/Project.html',
-        //    controller: 'ProjectEditController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
+        .when('/voluntario-home',
+        {
+            templateUrl: './Views/Voluntario/Index.html',
+            controller: 'VoluntarioHomeController',
+            resolve: { isAuthenticated: isAuthenticated }
+        })
+        .when('/voluntario/edit/:id', {
+            templateUrl: './Views/Voluntario/Edit.html',
+            controller: 'VoluntarioEditController',
+            resolve: { isAuthenticated: isAuthenticated }
+        })
+         .when('/escola-home',
+        {
+            templateUrl: './Views/Escola/Index.html',
+            controller: 'EscolaHomeController',
+            resolve: { isAuthenticated: isAuthenticated }
+        })
+        .when('/escola/edit/:id', {
+            templateUrl: './Views/Escola/Edit.html',
+            controller: 'EscolaEditController',
+            resolve: { isAuthenticated: isAuthenticated }
+        })
         //  .when('/project/view/:id', {
         //      templateUrl: './Views/Project.html',
         //      controller: 'ProjectViewController',

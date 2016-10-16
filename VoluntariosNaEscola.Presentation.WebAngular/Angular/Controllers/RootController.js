@@ -8,6 +8,7 @@ function rootCtrl($scope, $location, membershipService, $rootScope) {
     $scope.userData.displayUserInfo = displayUserInfo;
     $scope.logout = logout;
     $scope.careUp = false;
+    $scope.isAdmin =  $rootScope.repository.loggedUser != null && $rootScope.repository.loggedUser.isAdmin == 'True';
 
     function displayUserInfo() {
         $scope.userData.isUserLoggedIn = membershipService.isUserLoggedIn();

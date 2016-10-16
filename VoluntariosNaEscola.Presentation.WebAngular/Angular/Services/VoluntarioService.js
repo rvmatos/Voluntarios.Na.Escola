@@ -50,27 +50,27 @@ function voluntarioService(appService, $http, $cookieStore, $rootScope, notifica
 
     function removeFalied(response) {
 
-        notificationService.displayErrorWithTille('Falha ao tentar remover um usuario', response.data.errors);
+        notificationService.displayErrorWithTille('Falha ao tentar remover um voluntário', response.data.errors);
     }
 
     function updateFalied(response) {
 
-        notificationService.displayErrorWithTille('Falha ao tentar atualizar um usuario', response.data.errors);
+        notificationService.displayErrorWithTille('Falha ao tentar atualizar um voluntário', response.data.errors);
     }
 
     function insertFalied(response) {
 
-        notificationService.displayErrorWithTille('Falha ao tentar inserir um usuario', response.data.errors);
+        notificationService.displayErrorWithTille('Falha ao tentar inserir um voluntário', response.data.errors);
     }
 
     function loadSingleFalied(response) {
 
-        notificationService.displayErrorWithTille('Falha ao tentar carregar um usuario', response.data.errors);
+        notificationService.displayErrorWithTille('Falha ao tentar carregar um voluntário', response.data.errors);
     }
 
     function loadAllFalied(response) {
 
-        notificationService.displayErrorWithTille('Falha ao tentar carregar lista de usuarios', response.data.errors);
+        notificationService.displayErrorWithTille('Falha ao tentar carregar lista de voluntários', response.data.errors);
     }
 
     return service;

@@ -6,7 +6,24 @@ function usuarioCtrl($scope, UsuarioService, $location, $rootScope, $cookieStore
     $scope.create = function (usuario) {
   
         console.log(usuario);
-        UsuarioService.insert(usuario, completedchange);
+        if (usuario.isVoluntario)
+        {
+            UsuarioService.insert(usuario, completedchange);
+        }
+        else {
+            var entity = {
+                nome: usuario.nomeEscola,
+                endereco: usuario.endereco,
+                diretor: {
+                    nome: usuario.nomeDiretor,
+                    apelido: usuario.apelido,
+                    senha: usuario.senha,
+                    telefone: usuario.telefone,
+                    email: usuario.email
+                }
+            };
+            UsuarioService.insert(entity, completedchange);
+        }
         
     }
 

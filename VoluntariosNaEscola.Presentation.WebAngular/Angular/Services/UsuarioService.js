@@ -28,7 +28,7 @@ function usuarioService(appService, $http, $cookieStore, $rootScope, notificatio
     }
 
     function insert(entity, completed) {
-        var url = entity.isVoluntario ? 'voluntarios/add' : 'diretores/add';
+        var url = entity.isVoluntario ? 'voluntarios/add' : 'escolas/add';
         appService.post(url, entity,
         completed,
         insertFalied);

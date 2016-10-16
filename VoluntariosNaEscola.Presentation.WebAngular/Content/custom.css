@@ -4126,4 +4126,9 @@ ul.notifications {
   min-height: 300px;
   border: 1px solid #e5e5e5; }
 
+.divNoAdmin{
+    margin-left:115px !important;
+    margin-right:115px !important;
+}
+
 /** /Dropzone.js **/

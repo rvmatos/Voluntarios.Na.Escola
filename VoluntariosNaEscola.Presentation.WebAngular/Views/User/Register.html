@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div>
-                    <input type="text" class="form-control" placeholder="Telefone" ng-model="usuario.telefone" required="" />
+                    <input type="text" class="form-control" data-inputmask="'mask' : '(99) 9999 9999'" placeholder="Telefone" ng-model="usuario.telefone" required="" />
                 </div>
                 <div ng-if="usuario.isVoluntario">
                     <input type="text" class="form-control" placeholder="Profissão" ng-model="usuario.profissao" required="" />
@@ -69,7 +69,7 @@
                     <input type="text" class="form-control" placeholder="Complemento" ng-model="usuario.endereco.complemento" />
                 </div>
                 <div>
-                    <input type="text" class="form-control" placeholder="Cep" ng-model="usuario.endereco.cep" required="" />
+                    <input type="text" class="form-control" data-inputmask="'mask' : '99999-999'" placeholder="Cep" ng-model="usuario.endereco.cep" required="" />
                 </div>
                 <div>
                     <input type="text" class="form-control" placeholder="Cidade" ng-model="usuario.endereco.cidade" required="" />

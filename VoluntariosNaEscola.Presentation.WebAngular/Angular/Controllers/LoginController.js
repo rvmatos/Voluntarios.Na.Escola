@@ -7,7 +7,7 @@ function loginCtrl($scope, membershipService, $rootScope, $location, notificatio
     $scope.validSubmitted = false;
     $scope.login = login;
     $scope.user = {};
-
+    
     function login(form) {
 
         if (form.$valid) {
@@ -23,20 +23,18 @@ function loginCtrl($scope, membershipService, $rootScope, $location, notificatio
             $scope.user.nome = result.data.username;
             membershipService.saveCredentials(result.data);
             $scope.userData.displayUserInfo();
+            console.log(result.data.isVoluntario, result.data.isAdmin);
             
-
-            if ($rootScope.previousState)
-                $location.path($rootScope.previousState);
-            else {
-                if ($scope.userData.isAdmin) {
-                    $location.path('/');
-                }
-                else if($scope.userData.isVoluntario)
-                {
-                    $location.path('#/voluntario-home');
-                }
-                else $location.path('#/escola-home');
+            if (result.data.isAdmin == 'True') {
+                $location.path('/');
             }
+            else if (result.data.isVoluntario == 'True') {
+                console.log('isVoluntario');
+                $location.path('/voluntario-home');
+            }
+            else $location.path('/escola-home');
+
+
         }
         else
             notificationService.displayError('Falha ao autenticar, tente novamente.');
