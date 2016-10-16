@@ -54,7 +54,7 @@
                                 {{voluntario.email}}
                             </li>
                         </ul>
-                        <a class="btn btn-success" href="#/voluntario/edit/{{voluntario.id}}"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
+                        <a class="btn btn-success" href="#/voluntario/edit/{{voluntario.id}}"><i class="fa fa-edit m-right-xs"></i>Editar Perfil</a>
                         <br />
                         <!-- start skills -->
                         <h4>Habilidades</h4>
@@ -102,16 +102,16 @@
                         <div class="" role="tabpanel" data-example-id="togglable-tabs">
                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                 <li role="presentation" class="active">
-                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Meus Eventos</a>
+                                    <a  id="home-tab" role="tab" data-tabtoggle="tab_content1" aria-expanded="true">Meus Eventos</a>
                                 </li>
                                 <li role="presentation" class="">
-                                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Minhas Escolas</a>
+                                    <a  role="tab" id="profile-tab" data-tabtoggle="tab_content2" aria-expanded="false">Minhas Escolas</a>
                                 </li>
                                 <li role="presentation" class="">
-                                    <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Escolas Elegiveis</a>
+                                    <a  role="tab" id="profile-tab2" data-tabtoggle="tab_content3" aria-expanded="false">Escolas Elegiveis</a>
                                 </li>
                             </ul>
-                            <div id="myTabContent" class="tab-content">
+                            <div id="myTabContent" class="tab-content" ng-init="loadEscolas()">
                                 <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
                                     <!-- start recent activity -->
                                     <ul class="messages" ng-repeat="evento in voluntario.eventos">
@@ -130,10 +130,21 @@
                                     <!-- end recent activity -->
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                    
+                                    dffdsfds
                                 </div>
                                 <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                                 
+                                    <ul class="messages" ng-repeat="item in escolas">
+                                        <li>
+                                            <div class="message_date">                                                
+                                                <p class="month">Adicionar</p>
+                                            </div>
+                                            <div class="message_wrapper">
+                                                <h4 class="heading">{{item.nome}}</h4>
+                                                <blockquote class="message">Endere&ccedil;o: {{item.endereco.rua}} | Cidade: {{item.endereco.cidade}}/{{item.endereco.estado}} </blockquote>
+                                                <br />
+                                            </div>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>

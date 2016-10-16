@@ -15,12 +15,12 @@ function config($routeProvider, $httpProvider) {
             resolve: { isAuthenticated: isAuthenticated }
         })
         .when('/login', {
-            templateUrl: './Views/Login.html',
+            templateUrl: './Views/Auth/Login.html',
             controller: 'LoginController'
         })
          .when('/cadastre-se',
         {
-            templateUrl: './Views/User/Register.html',
+            templateUrl: './Views/Auth/Register.html',
             controller: 'UsuarioController'
         })
         .when('/voluntario-home',
@@ -45,6 +45,7 @@ function config($routeProvider, $httpProvider) {
             controller: 'EscolaEditController',
             resolve: { isAuthenticated: isAuthenticated }
         })
+       
         //  .when('/project/view/:id', {
         //      templateUrl: './Views/Project.html',
         //      controller: 'ProjectViewController',

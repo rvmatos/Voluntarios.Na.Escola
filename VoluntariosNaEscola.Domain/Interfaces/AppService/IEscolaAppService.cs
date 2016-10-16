@@ -4,7 +4,8 @@ using VoluntariosNaEscola.Domain.Interfaces.AppService.Common;
 
 namespace VoluntariosNaEscola.Domain.Interfaces.AppService
 {
-    public interface IDiretorAppService : IDisposable, IAppService<Diretor>
+    public interface IEscolaAppService : IDisposable, IAppService<Escola>
     {
+        Escola GetByDiretor(int idDiretor);
     }
 }

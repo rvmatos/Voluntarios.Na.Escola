@@ -8,7 +8,7 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, $filte
     $scope.loadProfile = function () {
 
 
-        EscolaService.getById($rootScope.repository.loggedUser.userid, completedLoad);
+        EscolaService.getByDiretor($rootScope.repository.loggedUser.userid, completedLoad);
     }
 
     function completedLoad(result) {

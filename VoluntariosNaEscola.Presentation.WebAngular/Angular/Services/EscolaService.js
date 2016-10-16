@@ -7,6 +7,7 @@ function escolaService(appService, $http, $cookieStore, $rootScope, notification
     var service = {
         getAll: getAll,
         getById: getById,
+        getByDiretor : getByDiretor,
         insert: insert,
         update: update,
         remove: remove
@@ -21,8 +22,16 @@ function escolaService(appService, $http, $cookieStore, $rootScope, notification
 
     }
 
+    
+
     function getById(id, completed) {
         appService.get('escolas/get/' + id, null,
+        completed,
+        loadSingleFalied);
+    }
+
+    function getByDiretor(id, completed) {
+        appService.get('escolas/getbydiretor/?idDiretor=' + id, null,
         completed,
         loadSingleFalied);
     }

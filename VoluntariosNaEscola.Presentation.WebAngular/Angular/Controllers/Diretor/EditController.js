@@ -1,7 +1,7 @@
-﻿appDataBase.controller('EscolaEditController', editCtrl);
+﻿appDataBase.controller('VoluntarioEditController', contactCtrl);
 
-editCtrl.$inject = ['$scope', '$routeParams', 'EscolaService', '$location', '$rootScope', '$cookieStore'];
-function editCtrl($scope, $routeParams, escolaService, $location, $rootScope, $cookieStore) {
+editCtrl.$inject = ['$scope', '$routeParams', 'DiretorService', '$location', '$rootScope', '$cookieStore'];
+function editCtrl($scope, $routeParams, diretorService, $location, $rootScope, $cookieStore) {
 
     $scope.action = 'U';
     $scope.id = $routeParams.id;
@@ -9,12 +9,12 @@ function editCtrl($scope, $routeParams, escolaService, $location, $rootScope, $c
     $scope.userLogged = $rootScope.repository.loggedUser;
 
     function loadData() {
-        escolaService.getById($scope.id, completed);
+        diretorService.getById($scope.id, completed);
     }
 
     function Save(form) {
         if (form.$valid)
-            escolaService.update($scope.entity, completedChange);
+            diretorService.update($scope.entity, completedChange);
     }
 
     function completed(result) {
