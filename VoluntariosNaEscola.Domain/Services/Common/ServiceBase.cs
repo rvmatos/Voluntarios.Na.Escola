@@ -17,13 +17,14 @@ namespace VoluntariosNaEscola.Domain.Services.Common
             _repo = repo;
             _validation = new ValidationResult();
         }
-        public ValidationResult Add(TEntity entity)
+        public virtual ValidationResult Add(TEntity entity)
         {
             try
             {
                 if (_validation.IsValid)
                 {
                     _repo.Add(entity);
+                    _validation.Model = entity;
                 }
             }
             catch (Exception ex)
@@ -65,7 +66,9 @@ namespace VoluntariosNaEscola.Domain.Services.Common
         {
             try
             {
-                _repo.Update(entity);
+                if (_validation.IsValid)
+                    _repo.Update(entity);
+                _validation.Model = entity;
             }
             catch (Exception ex)
             {

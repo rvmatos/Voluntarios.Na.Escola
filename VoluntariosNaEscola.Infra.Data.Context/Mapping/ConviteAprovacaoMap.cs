@@ -8,7 +8,7 @@ using VoluntariosNaEscola.Domain.Entities;
 
 namespace VoluntariosNaEscola.Infra.Data.Context.Mapping
 {
-    public class ConviteAprovacaoMap : EntityTypeConfiguration<ConviteAprocao>
+    public class ConviteAprovacaoMap : EntityTypeConfiguration<ConviteAprovacao>
     {
 
         public ConviteAprovacaoMap() : base()

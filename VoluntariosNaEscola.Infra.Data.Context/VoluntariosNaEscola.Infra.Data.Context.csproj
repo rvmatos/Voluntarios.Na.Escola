@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201610131404514_AtualizaPropriedades.Designer.cs">
       <DependentUpon>201610131404514_AtualizaPropriedades.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610181609242_AddNomeConviteAprovacao.cs" />
+    <Compile Include="Migrations\201610181609242_AddNomeConviteAprovacao.Designer.cs">
+      <DependentUpon>201610181609242_AddNomeConviteAprovacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />
@@ -100,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610131404514_AtualizaPropriedades.resx">
       <DependentUpon>201610131404514_AtualizaPropriedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610181609242_AddNomeConviteAprovacao.resx">
+      <DependentUpon>201610181609242_AddNomeConviteAprovacao.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

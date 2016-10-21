@@ -45,6 +45,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1 WebAngular", "1.1 WebAn
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntariosNaEscola.Presentation.WebAngular", "VoluntariosNaEscola.Presentation.WebAngular\VoluntariosNaEscola.Presentation.WebAngular.csproj", "{7ABF83E7-723E-409C-8ED0-459BB61225F3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoluntarioNaEscola.Infra.CrossCutting.Util", "VoluntarioNaEscola.Infra.CrossCutting.Util\VoluntarioNaEscola.Infra.CrossCutting.Util.csproj", "{C4D240A9-B9B3-40E6-9C3F-B051A48E98E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ABF83E7-723E-409C-8ED0-459BB61225F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4D240A9-B9B3-40E6-9C3F-B051A48E98E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4D240A9-B9B3-40E6-9C3F-B051A48E98E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4D240A9-B9B3-40E6-9C3F-B051A48E98E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4D240A9-B9B3-40E6-9C3F-B051A48E98E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,5 +120,6 @@ Global
 		{C280AAB9-65A1-4D28-98F0-CD9BD848312B} = {BE2F6193-809B-422C-A17F-B04CAA23EA6C}
 		{B4612CDA-6454-4068-A5CE-38C95ACB9CDE} = {72D09955-ADFD-48BE-8DB3-98389D9BF652}
 		{7ABF83E7-723E-409C-8ED0-459BB61225F3} = {B4612CDA-6454-4068-A5CE-38C95ACB9CDE}
+		{C4D240A9-B9B3-40E6-9C3F-B051A48E98E3} = {ED16D1A7-5D8D-46C4-9462-5CF4E7DB7BD6}
 	EndGlobalSection
 EndGlobal

@@ -6,10 +6,10 @@ namespace VoluntariosNaEscola.Domain.Entities
     {
         public Diretor()
         {
-            Aprovadores = new HashSet<ConviteAprocao>();
+            Aprovadores = new HashSet<ConviteAprovacao>();
         }
       
-        public ICollection<ConviteAprocao> Aprovadores { get; set; }
+        public ICollection<ConviteAprovacao> Aprovadores { get; set; }
 
         public bool Aprovado { get; set; }
     }

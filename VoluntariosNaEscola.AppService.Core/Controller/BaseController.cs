@@ -60,7 +60,7 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
 
 
             if (result.IsValid)
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateResponse(HttpStatusCode.OK, result);
             else
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, result);
         }

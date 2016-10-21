@@ -102,7 +102,7 @@ namespace VoluntariosNaEscola.Infra.Data.Context
         public DbSet<Escola> Escolas { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Habilidade> Habilidades { get; set; }
-        public DbSet<ConviteAprocao> ConvitesAprovacoes { get; set; }
+        public DbSet<ConviteAprovacao> ConvitesAprovacoes { get; set; }
 
 
         private static Dictionary<Type, EntitySetBase> _mappingCache = new Dictionary<Type, EntitySetBase>();

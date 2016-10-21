@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Config\WebApiConfig.cs" />
     <Compile Include="Controller\BaseController.cs" />
+    <Compile Include="Controller\ConviteAprovacaoController.cs" />
     <Compile Include="Controller\DiretoresController.cs" />
     <Compile Include="Controller\EscolasController.cs" />
     <Compile Include="Controller\UsuariosController.cs" />

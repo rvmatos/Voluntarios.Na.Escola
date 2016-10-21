@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,8 +51,15 @@
     <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\EntidadeBase.cs" />
     <Compile Include="Entities\Escola.cs" />
+    <Compile Include="Entities\Validation\MessageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MessageResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Application\Common\IApplication.cs" />
+    <Compile Include="Interfaces\Application\IConviteAprovacaoApplication.cs" />
     <Compile Include="Interfaces\AppService\IAcaoAppService.cs" />
+    <Compile Include="Interfaces\AppService\IConviteAprovacaoAppService.cs" />
     <Compile Include="Interfaces\AppService\IDiretorAppService.cs" />
     <Compile Include="Interfaces\AppService\IEnderecoAppService.cs" />
     <Compile Include="Interfaces\AppService\IEscolaAppService.cs" />
@@ -73,6 +81,7 @@
     <Compile Include="Interfaces\Repository\Common\IReadOnlyRepository.cs" />
     <Compile Include="Interfaces\Repository\Common\IRepository.cs" />
     <Compile Include="Interfaces\Repository\IAcaoRepository.cs" />
+    <Compile Include="Interfaces\Repository\IConviteAprovacaoRepository.cs" />
     <Compile Include="Interfaces\Repository\IDiretorRepository.cs" />
     <Compile Include="Interfaces\Repository\IEnderecoRepository.cs" />
     <Compile Include="Interfaces\Repository\IEscolaRepository.cs" />
@@ -83,6 +92,7 @@
     <Compile Include="Interfaces\Repository\IVoluntarioRepository.cs" />
     <Compile Include="Interfaces\Service\Common\IService.cs" />
     <Compile Include="Interfaces\Service\IAcaoService.cs" />
+    <Compile Include="Interfaces\Service\IConviteAprovacaoService.cs" />
     <Compile Include="Interfaces\Service\IDiretorService.cs" />
     <Compile Include="Interfaces\Service\IEnderecoService.cs" />
     <Compile Include="Interfaces\Service\IEscolaService.cs" />
@@ -100,6 +110,7 @@
     <Compile Include="Entities\Voluntario.cs" />
     <Compile Include="Services\Common\ServiceBase.cs" />
     <Compile Include="Services\AcaoService.cs" />
+    <Compile Include="Services\ConviteAprovacaoService.cs" />
     <Compile Include="Services\DiretorService.cs" />
     <Compile Include="Services\EnderecoService.cs" />
     <Compile Include="Services\EscolaService.cs" />
@@ -114,8 +125,19 @@
     <Compile Include="Validations\ValidationRule.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\Validation\" />
     <Folder Include="Interfaces\Repository\ReadOnly\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VoluntarioNaEscola.Infra.CrossCutting.Util\VoluntarioNaEscola.Infra.CrossCutting.Util.csproj">
+      <Project>{c4d240a9-b9b3-40e6-9c3f-b051a48e98e3}</Project>
+      <Name>VoluntarioNaEscola.Infra.CrossCutting.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Entities\Validation\MessageResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>MessageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

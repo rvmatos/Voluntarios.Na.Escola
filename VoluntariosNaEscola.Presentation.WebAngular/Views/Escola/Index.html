@@ -56,36 +56,7 @@
                         </ul>
                         <a class="btn btn-success" href="#/escola/edit/{{escola.id}}"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
                         <br />
-                        <!-- start skills -->
-                        <h4>Habilidades</h4>
-                        <ul class="list-unstyled user_data" ng-repeat="habilidade in voluntario.habilidades">
-
-                            <li>
-                                <p>{{habilidade.nome}}</p>
-                                <!--<div class="progress progress_sm">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-                                </div>-->
-                            </li>
-                            <!--<li>
-                                <p>Website Design</p>
-                                <div class="progress progress_sm">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="70"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p>Automation & Testing</p>
-                                <div class="progress progress_sm">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="30"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p>UI / UX</p>
-                                <div class="progress progress_sm">
-                                    <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
-                                </div>
-                            </li>-->
-                        </ul>
-                        <!-- end of skills -->
+                     
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         <div class="profile_title">
@@ -102,17 +73,17 @@
                         <div class="" role="tabpanel" data-example-id="togglable-tabs">
                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
                                 <li role="presentation" class="active">
-                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Meus Eventos</a>
+                                    <a href="/#" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">{{escola.diretor.aprovado ? 'Meus Eventos' : 'Meus Aprovadores'}}</a>
                                 </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Minhas Escolas</a>
+                                <li ng-if="escola.diretor.aprovado" role="presentation" class="">
+                                    <a href="/#" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Minhas Escolas</a>
                                 </li>
-                                <li role="presentation" class="">
-                                    <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Escolas Elegiveis</a>
+                                <li ng-if="escola.diretor.aprovado" role="presentation" class="">
+                                    <a href="/#" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Escolas Elegiveis</a>
                                 </li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
-                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
                                     <!-- start recent activity -->
                                     <ul class="messages" ng-repeat="evento in voluntario.eventos">
                                         <li>
@@ -129,11 +100,70 @@
                                     </ul>
                                     <!-- end recent activity -->
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
 
                                 </div>
-                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
 
+                                </div>
+                                <div ng-if="!escola.diretor.aprovado" role="tabpanel" class="tab-pane fade active in" id="tab_content2" aria-labelledby="profile-tab">
+                                    <form class="form-horizontal form-label-left input_mask" ng-init="convite.idDiretor = escola.idDiretor">
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                            <input type="text" class="form-control has-feedback-left" ng-model="convite.nome" id="inputSuccess2" placeholder="Nome">
+                                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                        </div>
+
+                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+                                            <input type="text" class="form-control has-feedback-left" ng-model="convite.email" id="inputSuccess4" placeholder="Email">
+                                            <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+                                          </div>
+
+                                        
+                                        
+                                        <div class="form-group">
+                                            <div class="col-md-12">                                             
+                                                <button type="submit" class="btn btn-success" ng-click="addConvite()" style="float:right;">Adicionar</button>
+                                            </div>
+                                        </div>
+                                        <div class="ln_solid"></div>
+                                    </form>
+                                     <!-- start user projects -->
+                                    <table class="data table table-striped no-margin" >
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome</th>                                                
+                                                <th>Email</th>
+                                                <th>Dt Envio</th>
+                                                <th>Dt Aceite</th>
+                                                <th>A&ccedil;&otilde;es</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="convite in escola.diretor.aprovadores">
+                                                <td>{{convite.id}}</td>
+                                                <td>{{convite.nome}}</td>
+                                                <td>{{convite.email}}</td>
+                                                <td>{{convite.dtEnvio|date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                                <td>{{convite.dtAceite|date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                                <td>
+
+                                                    <button type="button" ng-disabled="{{convite.dtAceite != null}}" ng-click="ExcluirConvite(convite)"
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após aceitação do convite, não poderá ser excluído.">
+                                                        Excluir
+                                                    </button>
+                                                <a href=""  ></a>&nbsp;|
+                                                &nbsp;
+                                                    <!--<button type="button" class="btn btn-default" >Tooltip top</button>-->
+                                                    <button type="button" ng-disabled="!PermiteReenviar(convite)" ng-click="ReenviarConvite(convite)" 
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva." >Reenviar</button>
+                                                 </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                    <!-- end user projects -->
                                 </div>
                             </div>
                         </div>

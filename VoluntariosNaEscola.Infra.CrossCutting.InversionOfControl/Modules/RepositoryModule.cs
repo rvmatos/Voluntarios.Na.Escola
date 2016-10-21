@@ -17,6 +17,7 @@ namespace VoluntariosNaEscola.Infra.CrossCutting.InversionOfControl.Modules
             Bind<IHabilidadeRepository>().To<HabilidadeRepository>();
             Bind<ISupervisorRepository>().To<SupervisorRepository>();
             Bind<IVoluntarioRepository>().To<VoluntarioRepository>();
+            Bind<IConviteAprovacaoRepository>().To<ConviteAprovacaoRepository>();
         }
     }
 }

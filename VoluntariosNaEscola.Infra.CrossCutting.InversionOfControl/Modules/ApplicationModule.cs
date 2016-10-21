@@ -18,6 +18,7 @@ namespace VoluntariosNaEscola.Infra.CrossCutting.InversionOfControl.Modules
             Bind<IHabilidadeApplication>().To<HabilidadeApplication>();
             Bind<ISupervisorApplication>().To<SupervisorApplication>();
             Bind<IVoluntarioApplication>().To<VoluntarioApplication>();
+            Bind<IConviteAprovacaoApplication>().To<ConviteAprovacaoApplication>();
         }
     }
 }

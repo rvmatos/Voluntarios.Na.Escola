@@ -17,7 +17,8 @@ namespace VoluntariosNaEscola.Infra.CrossCutting.InversionOfControl.Modules
             Bind<IHabilidadeService>().To<HabilidadeService>();
             Bind<ISupervisorService>().To<SupervisorService>();
             Bind<IVoluntarioService>().To<VoluntarioService>();
-                //.Intercept().With<LogInterceptor>(); 
+            Bind<IConviteAprovacaoService>().To<ConviteAprovacaoService>();
+            //.Intercept().With<LogInterceptor>(); 
         }
     }
 }

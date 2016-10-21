@@ -6,5 +6,6 @@ namespace VoluntariosNaEscola.Domain.Interfaces.Service
 {
     public interface IVoluntarioService : IDisposable, IService<Voluntario>
     {
+
     }
 }

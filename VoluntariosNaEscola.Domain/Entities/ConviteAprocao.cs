@@ -2,11 +2,13 @@
 
 namespace VoluntariosNaEscola.Domain.Entities
 {
-    public class ConviteAprocao : EntidadeBase
+    public class ConviteAprovacao : EntidadeBase
     {
         public virtual Diretor Diretor { get; set; }
 
         public int IdDiretor { get; set; }
+
+        public string Nome { get; set; }
 
         public string Email { get; set; }
 
