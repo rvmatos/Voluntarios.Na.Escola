@@ -45,6 +45,11 @@ function config($routeProvider, $httpProvider) {
             controller: 'EscolaEditController',
             resolve: { isAuthenticated: isAuthenticated }
         })
+          .when('/supervisor/novo/:id', {
+              templateUrl: './Views/Supervisor/New.html',
+              controller: 'SupervisorNovoController'
+          })
+
        
         //  .when('/project/view/:id', {
         //      templateUrl: './Views/Project.html',
@@ -130,7 +135,9 @@ function run($rootScope, $location, $cookieStore, $http, $httpProvider) {
     $rootScope.repository = $cookieStore.get('repository') || {};
 
     if ($rootScope.repository.loggedUser) {
+        $http.defaults.withCredentials = true;
         $http.defaults.headers.common['Authorization'] = $rootScope.repository.loggedUser.authdata;
+
     }
 
 }

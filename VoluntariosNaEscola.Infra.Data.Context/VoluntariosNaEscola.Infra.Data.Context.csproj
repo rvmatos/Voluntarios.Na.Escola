@@ -68,17 +68,9 @@
     <Compile Include="Mapping\SupervisorMap.cs" />
     <Compile Include="Mapping\UsuarioMap.cs" />
     <Compile Include="Mapping\VoluntarioMap.cs" />
-    <Compile Include="Migrations\201610111546454_RefreshMapping.cs" />
-    <Compile Include="Migrations\201610111546454_RefreshMapping.Designer.cs">
-      <DependentUpon>201610111546454_RefreshMapping.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610131404514_AtualizaPropriedades.cs" />
-    <Compile Include="Migrations\201610131404514_AtualizaPropriedades.Designer.cs">
-      <DependentUpon>201610131404514_AtualizaPropriedades.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610181609242_AddNomeConviteAprovacao.cs" />
-    <Compile Include="Migrations\201610181609242_AddNomeConviteAprovacao.Designer.cs">
-      <DependentUpon>201610181609242_AddNomeConviteAprovacao.cs</DependentUpon>
+    <Compile Include="Migrations\201611200044546_UpdateConvite.cs" />
+    <Compile Include="Migrations\201611200044546_UpdateConvite.Designer.cs">
+      <DependentUpon>201611200044546_UpdateConvite.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,14 +91,8 @@
     <Folder Include="Config\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610111546454_RefreshMapping.resx">
-      <DependentUpon>201610111546454_RefreshMapping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610131404514_AtualizaPropriedades.resx">
-      <DependentUpon>201610131404514_AtualizaPropriedades.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610181609242_AddNomeConviteAprovacao.resx">
-      <DependentUpon>201610181609242_AddNomeConviteAprovacao.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611200044546_UpdateConvite.resx">
+      <DependentUpon>201611200044546_UpdateConvite.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

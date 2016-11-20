@@ -16,7 +16,7 @@ namespace VoluntariosNaEscola.Infra.Data.Context
        
 
         public VoluntariadoContext()
-            :base("VoluntariadoEntities")
+            :base("DbVoluntariado")
         {
         }
 

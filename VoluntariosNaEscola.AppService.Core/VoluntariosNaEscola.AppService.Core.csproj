@@ -65,6 +65,7 @@
     <Compile Include="Controller\ConviteAprovacaoController.cs" />
     <Compile Include="Controller\DiretoresController.cs" />
     <Compile Include="Controller\EscolasController.cs" />
+    <Compile Include="Controller\SupervisorContoller.cs" />
     <Compile Include="Controller\UsuariosController.cs" />
     <Compile Include="Controller\VoluntariosController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

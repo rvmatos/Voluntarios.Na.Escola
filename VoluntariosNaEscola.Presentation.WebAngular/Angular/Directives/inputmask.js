@@ -1,7 +1,7 @@
 ﻿appDataBase.directive('inputmask', function () {
     return function (scope, element, attrs) {
-        console.log('dataInputmask');
-        $(element).inputmask();
+        console.log(scope,element, attrs);
+        $(element).inputmask({ placeholder: " ", clearMaskOnLostFocus: true });
        
     };
 });

@@ -9,6 +9,7 @@ function contactCtrl($scope, $routeParams, voluntarioService, $location, $rootSc
     $scope.userLogged = $rootScope.repository.loggedUser;
 
     function loadData() {
+
         voluntarioService.getById($scope.id, completed);
     }
 

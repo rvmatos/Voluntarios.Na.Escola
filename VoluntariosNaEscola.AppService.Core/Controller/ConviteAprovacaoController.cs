@@ -20,6 +20,12 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
             _appBase = appBase;
         }
 
+        public HttpResponseMessage GetByGuid(string id)
+        {
+            var result = _appBase.Find(x => x.ChaveConfirmacao.ToString().Equals(id)).FirstOrDefault();
+            return Request.CreateResponse(System.Net.HttpStatusCode.OK, result);
+        }
+
         public HttpResponseMessage GetConvitesBy(int idDiretor)
         {
             var result = _appBase.Find(x => x.IdDiretor == idDiretor);

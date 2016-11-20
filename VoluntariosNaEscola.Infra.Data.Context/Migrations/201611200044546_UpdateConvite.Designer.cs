@@ -7,13 +7,13 @@ namespace VoluntariosNaEscola.Infra.Data.Context.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddNomeConviteAprovacao : IMigrationMetadata
+    public sealed partial class UpdateConvite : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddNomeConviteAprovacao));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateConvite));
         
         string IMigrationMetadata.Id
         {
-            get { return "201610181609242_AddNomeConviteAprovacao"; }
+            get { return "201611200044546_UpdateConvite"; }
         }
         
         string IMigrationMetadata.Source

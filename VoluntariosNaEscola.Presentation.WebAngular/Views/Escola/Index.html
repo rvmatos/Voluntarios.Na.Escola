@@ -44,7 +44,7 @@
                         <h3>{{escola.nome}}</h3>
                         <ul class="list-unstyled user_data">
                             <li>
-                                <i class="fa fa-map-marker user-profile-icon"></i> {{escola.endereco.cidade}}/{{voluntario.endereco.estado}}, USA
+                                <i class="fa fa-map-marker user-profile-icon"></i> {{escola.endereco.cidade}}/{{escola.endereco.estado}}
                             </li>
                             <li>
                                 <i class="fa fa-briefcase user-profile-icon"></i> {{escola.diretor.nome}}
@@ -66,7 +66,7 @@
                             <div class="col-md-6">
                                 <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
                                     <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                    <span>{{voluntario.dtAtualizacao| date: 'fullDate'}}</span>
+                                    <span>{{escola.dtAtualizacao| date: 'fullDate'}}</span>
                                 </div>
                             </div>
                         </div>
@@ -137,6 +137,7 @@
                                                 <th>Email</th>
                                                 <th>Dt Envio</th>
                                                 <th>Dt Aceite</th>
+                                                <th>Aprovado</th>
                                                 <th>A&ccedil;&otilde;es</th>
                                             </tr>
                                         </thead>
@@ -146,18 +147,24 @@
                                                 <td>{{convite.nome}}</td>
                                                 <td>{{convite.email}}</td>
                                                 <td>{{convite.dtEnvio|date:'dd/MM/yyyy HH:mm:ss'}}</td>
-                                                <td>{{convite.dtAceite|date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                                <td>{{convite.dtAceite|date:'dd/MM/yyyy'}}</td>
+                                                <td>{{convite.diretorAprovado == false ? 'Não' : convite.diretorAprovado == true ? 'Sim' : '-'}}</td>
                                                 <td>
 
                                                     <button type="button" ng-disabled="{{convite.dtAceite != null}}" ng-click="ExcluirConvite(convite)"
                                                             class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após aceitação do convite, não poderá ser excluído.">
                                                         Excluir
-                                                    </button>
-                                                <a href=""  ></a>&nbsp;|
-                                                &nbsp;
-                                                    <!--<button type="button" class="btn btn-default" >Tooltip top</button>-->
+                                                    </button>    
                                                     <button type="button" ng-disabled="!PermiteReenviar(convite)" ng-click="ReenviarConvite(convite)" 
                                                             class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva." >Reenviar</button>
+                                                
+                                                    <button type="button" ng-show="userLogged.isAdmin == 'True'" ng-click="ConfirmarConvite(convite)"
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva.">
+                                                        Reenviar
+                                                    </button>
+
+                                                    
+
                                                  </td>
                                             </tr>
                                             

@@ -1,0 +1,114 @@
+﻿
+
+<div class="row" style=" width: 650px; margin: 0px 0px 0px -243px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>{{aprovado ? 'Supervisor Aprovador' : 'Aprovar Diretor'}}</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <br />
+                <form id="frmEditvoluntarios" name="frmEditvoluntarios" form-validate data-parsley-validate="" novalidate class="form-horizontal form-label-left">
+                    <div class="block">
+                        <div class="block_content">
+                            <h2 class="title">
+                                <a></a>
+                            </h2>
+                        </div>
+                    </div>
+                    <div ng-show="!aprovado">
+                        <p>Deseja aprovar {{entity.diretor.nome}} como diretor(a) da escola?</p>
+                        <div class="x_content">
+                            <button type="button" ng-click="aprovado=true;Aprovar(entity)" class="btn btn-round btn-success">Aprovar</button>
+                            <button type="button" ng-click="aprovado=false;Reprovar(entity)" class="btn btn-round btn-danger">Reprovar</button>
+
+                        </div>
+                    </div>
+                    <div ng-show="aprovado">
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorNome">
+                                Nome  <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="aprovadorNome" id="aprovadorNome" required="" ng-model="aprovador.nome" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Nome é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorEmail">
+                                Email <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="email" name="aprovadorEmail" id="aprovadorEmail" disabled="disabled" required="" ng-model="aprovador.email" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Email é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorProfissao">
+                                Profissão <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="aprovadorProfissao" id="aprovadorProfissao" required="" ng-model="aprovador.profissao" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Profissão é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorTelefone">
+                                Telefone <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="aprovadorTelefone" id="aprovadorTelefone" required="" data-inputmask="'mask' : '(99) 9999 99999'" ng-model="aprovador.telefone" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Telefone é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorDtNascimento">
+                                Dt. Nascimento <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="aprovadorDtNascimento" id="aprovadorDtNascimento" data-inputmask="'mask' : '99/99/9999'" required="" ng-model="aprovador.dtNascimento" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Dt. Nascimento é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorApelido">
+                                Usuário <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="text" name="aprovadorApelido" id="aprovadorApelido" required="" ng-model="aprovador.apelido" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-required-message="Usuário é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorSenha">
+                                Senha <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="password" name="aprovadorSenha" id="aprovadorSenha" required="" ng-model="aprovador.senha" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-minlength="6" data-parsley-maxlength="100" data-parsley-minlength-message="Sua senha deve ter no minímo de 6 dígito" data-parsley-required-message="Senha é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="aprovadorConfSenha">
+                                Confirmar Senha <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input type="password" name="aprovadorConfSenha" id="aprovadorConfSenha" required="" ng-model="aprovador.confSenha" class="form-control col-md-7 col-xs-12"
+                                       data-parsley-equalto="#aprovadorSenha" data-parsley-equalto-message="As senhas devem ser idênticas." data-parsley-required-message="Confirmação Senha é obrigatório.">
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <button ng-click="Save(aprovador);" class="btn btn-success">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -48,6 +48,9 @@
   <ItemGroup>
     <Content Include="Angular\app.base.js" />
     <Content Include="Angular\app.config.js" />
+    <Content Include="Angular\Controllers\Supervisor\EditController.js" />
+    <Content Include="Angular\Controllers\Supervisor\HomeController.js" />
+    <Content Include="Angular\Controllers\Supervisor\NewController.js" />
     <Content Include="Angular\Controllers\Category\CategoryAddController.js" />
     <Content Include="Angular\Controllers\Category\CategoryController.js" />
     <Content Include="Angular\Controllers\Category\CategoryEditController.js" />
@@ -89,6 +92,7 @@
     <Content Include="Angular\Directives\tooltips.js" />
     <Content Include="Angular\Interceptors\loadingStatusInterceptor.js" />
     <Content Include="Angular\Services\AppService.js" />
+    <Content Include="Angular\Services\SupervisorService.js" />
     <Content Include="Angular\Services\ConviteAprovacaoService.js" />
     <Content Include="Angular\Services\EscolaService.js" />
     <Content Include="Angular\Services\DiretorService.js" />
@@ -197,6 +201,9 @@
     <Content Include="Scripts\switchery.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Views\Supervisor\Edit.html" />
+    <Content Include="Views\Supervisor\Index.html" />
+    <Content Include="Views\Supervisor\New.html" />
     <Content Include="Views\Category\Edit.html" />
     <Content Include="Views\Category\Index.html" />
     <Content Include="Views\Contact\Edit.html" />
@@ -257,6 +264,7 @@
     <Content Include="Views\Voluntario\Edit.html" />
     <Content Include="Views\Voluntario\Index.html" />
     <Content Include="web.config" />
+    <None Include="Properties\PublishProfiles\ulbra-web.pubxml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

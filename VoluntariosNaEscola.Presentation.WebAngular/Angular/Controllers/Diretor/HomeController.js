@@ -12,7 +12,6 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, DiretorService, $filt
     }
 
     function completedLoad(result) {
-        console.log(result);
         $scope.escola = result.data;
     }
 

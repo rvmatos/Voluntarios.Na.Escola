@@ -4,7 +4,7 @@ homeCtrl.$inject = ['$scope', '$rootScope', '$location', 'ngDialog', 'EscolaServ
 function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, conviteAprovacaoService, notificationService, $filter) {
 
     $scope.escola = { diretor: { aprovadores: [] } };
-
+    $scope.userLogged = $rootScope.repository.loggedUser;
     $scope.convite = {};
 
     $scope.loadProfile = function () {
@@ -28,7 +28,7 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
     }
 
     $scope.addConvite = function () {
-        console.log($scope);
+      
 
         var convite = { nome: $scope.convite.nome, email: $scope.convite.email, idDiretor: $scope.escola.idDiretor };
 
@@ -42,7 +42,7 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
             var d1 = new Date();
             var d2 = getDate(convite.dtEnvio);           
             d2.setHours(d2.getHours() + 1);
-            console.log(d1, d2);
+           
 
             if (d1 > d2)
                 return true;

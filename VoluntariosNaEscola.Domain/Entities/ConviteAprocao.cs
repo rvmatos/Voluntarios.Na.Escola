@@ -14,9 +14,11 @@ namespace VoluntariosNaEscola.Domain.Entities
 
         public DateTime? DtEnvio { get; set; }
 
+        public DateTime? DtAceite { get; set; }
+
         public Guid ChaveConfirmacao { get; set; }
         
-        public bool DiretorAprovado { get; set; }
+        public bool? DiretorAprovado { get; set; }
         
         public bool ConviteAceito { get; set; } 
     }

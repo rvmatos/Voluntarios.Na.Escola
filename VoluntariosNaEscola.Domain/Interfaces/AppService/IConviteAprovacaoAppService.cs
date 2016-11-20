@@ -14,5 +14,7 @@ namespace VoluntariosNaEscola.Domain.Interfaces.AppService
     {
         HttpResponseMessage ReenviarConvite(int id);
         HttpResponseMessage GetConvitesBy(int idDiretor);
+
+        HttpResponseMessage GetByGuid(string id);
     }
 }

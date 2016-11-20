@@ -7,6 +7,7 @@ function conviteAprovacaoService(appService, $http, $cookieStore, $rootScope, no
     var service = {
         getAll: getAll,
         getById: getById,
+        getByGuid: getByGuid,
         insert: insert,
         update: update,
         remove: remove,
@@ -22,6 +23,17 @@ function conviteAprovacaoService(appService, $http, $cookieStore, $rootScope, no
             return result;
 
     }
+
+    function getByGuid(id, completed) {
+        var result = appService.get('conviteaprovacao/getbyguid/' + id, null,
+         completed,
+         loadSingleFalied);
+        if (completed == undefined)
+            return result;
+
+    }
+
+    
 
     function getById(id, completed) {
         var result = appService.get('conviteaprovacao/get/' + id, null,

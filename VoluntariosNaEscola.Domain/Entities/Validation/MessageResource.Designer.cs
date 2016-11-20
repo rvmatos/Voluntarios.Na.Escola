@@ -70,7 +70,7 @@ namespace VoluntariosNaEscola.Domain.Entities.Validation {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;Aprove como diretor da escola {1} o Sr(a) {2}.&lt;a href=&apos;{3}?idguid={0}&apos;&gt;Clique aqui!!&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;.
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;Aprove como diretor da escola {1} o Sr(a) {2}.&lt;a href=&apos;{3}{0}&apos;&gt;Clique aqui!!&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;.
         /// </summary>
         internal static string MsgCorpoEmailConviteAprovador {
             get {

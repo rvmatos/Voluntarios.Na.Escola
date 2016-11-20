@@ -121,6 +121,6 @@
     <value>Convite para entrar nos Voluntários na Escola</value>
   </data>
   <data name="MsgCorpoEmailConviteAprovador" xml:space="preserve">
-    <value>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;Aprove como diretor da escola {1} o Sr(a) {2}.&lt;a href='{3}?idguid={0}'&gt;Clique aqui!!&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;</value>
+    <value>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;Aprove como diretor da escola {1} o Sr(a) {2}.&lt;a href='{3}{0}'&gt;Clique aqui!!&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;</value>
   </data>
 </root>
