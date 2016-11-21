@@ -1,0 +1,173 @@
+﻿
+<div class="" ng-init="loadProfile()">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Bem-vindo Diretor</h3>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+       
+                <div class="x_content">
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                  
+                        <h3>{{entity.nome}}</h3>
+                        <ul class="list-unstyled user_data">
+                          
+                           
+                            <li class="m-top-xs">
+                                <i class="fa fa-external-link user-profile-icon"></i>
+                                {{entity.email}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="profile_title">
+                            <div class="col-md-6">
+                                <h2>&Uacute;ltimo atualização</h2>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                                    <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                    <span>{{entity.dtAtualizacao| date: 'fullDate'}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="/#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Escolas</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="/#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Diretores</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="/#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Voluntários</a>
+                                </li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">                        
+                                <div role="tabpanel" class="tab-pane fade  active in" id="tab_content1" aria-labelledby="profile-tab">
+                                    <table class="data table table-striped no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Direto Email</th>
+                                                <th>Diretor Nome</th>                                               
+                                                <th>Diretor Aprovado?</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="escola in escolas">
+                                                <td>{{escola.id}}</td>
+                                                <td>{{escola.nome}}</td>
+                                                <td>{{escola.diretor.email}}</td>
+                                                <td>{{escola.diretor.nome}}</td>
+                                                <td>{{convite.diretor.aprovado ? 'Sim' : 'Não'}}</td>                                                
+                                                <td>                                                
+
+                                                    <button type="button" ng-show="userLogged.isAdmin == 'True'" ng-click="ConfirmarConvite(convite)"
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva.">
+                                                        Reenviar
+                                                    </button>
+
+
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                    <table class="data table table-striped no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Email</th>
+                                                <th>Dt Envio</th>
+                                                <th>Dt Aceite</th>
+                                                <th>Aprovado</th>
+                                                <th>A&ccedil;&otilde;es</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="convite in escola.diretor.aprovadores">
+                                                <td>{{convite.id}}</td>
+                                                <td>{{convite.nome}}</td>
+                                                <td>{{convite.email}}</td>
+                                                <td>{{convite.dtEnvio|date:'dd/MM/yyyy HH:mm:ss'}}</td>
+                                                <td>{{convite.dtAceite|date:'dd/MM/yyyy'}}</td>
+                                                <td>{{convite.diretorAprovado == false ? 'Não' : convite.diretorAprovado == true ? 'Sim' : '-'}}</td>
+                                                <td>
+
+                                                    <button type="button" ng-disabled="{{convite.dtAceite != null}}" ng-click="ExcluirConvite(convite)"
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após aceitação do convite, não poderá ser excluído.">
+                                                        Excluir
+                                                    </button>
+                                                    <button type="button" ng-disabled="!PermiteReenviar(convite)" ng-click="ReenviarConvite(convite)"
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva.">
+                                                        Reenviar
+                                                    </button>
+
+                                                    <button type="button" ng-show="userLogged.isAdmin == 'True'" ng-click="ConfirmarConvite(convite)"
+                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva.">
+                                                        Reenviar
+                                                    </button>
+
+
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">                                  
+                                    <!-- start user projects -->
+                                    <table class="data table table-striped no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nome</th>
+                                                <th>Email</th>
+                                                <th>Usuário</th>
+                                                <th>Ativo</th>
+                                                <th>Qtd. Eventos</th>
+                                                <th>Qtd. Escolas</th>
+                                                <th>A&ccedil;&otilde;es</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="voluntario in voluntarios">
+                                                <td>{{voluntario.id}}</td>
+                                                <td>{{voluntario.nome}}</td>
+                                                <td>{{voluntario.email}}</td>
+                                                <td>{{voluntario.apelido}}</td>
+                                                <td>{{voluntario.ativo ? 'Sim' : 'Não'}}</td>
+                                                <td>{{voluntario.eventos.length}}</td>
+                                                <td>{{voluntario.escolas.length}}</td>
+                                                <td>
+
+                                                   Editar | Excluir | Simular
+
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                    <!-- end user projects -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

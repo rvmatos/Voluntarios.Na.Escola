@@ -108,7 +108,7 @@
                                 </div>
                                 <div ng-if="!escola.diretor.aprovado" role="tabpanel" class="tab-pane fade active in" id="tab_content2" aria-labelledby="profile-tab">
                                     <form class="form-horizontal form-label-left input_mask" ng-init="convite.idDiretor = escola.idDiretor">
-
+                                        <h2>Para liberar a àrea de eventos você precisa de 5 aprovadores.</h2>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                             <input type="text" class="form-control has-feedback-left" ng-model="convite.nome" id="inputSuccess2" placeholder="Nome">
                                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -128,6 +128,8 @@
                                         </div>
                                         <div class="ln_solid"></div>
                                     </form>
+                                    <h2>Convites enviados: {{escola.diretor.aprovadores.length}} | Convites aprovados: {{GetQtdAprovados(escola.diretor.aprovadores)}} | Convites em aberto: {{GetQtdEmAberto(escola.diretor.aprovadores)}}</h2>
+
                                      <!-- start user projects -->
                                     <table class="data table table-striped no-margin" >
                                         <thead>

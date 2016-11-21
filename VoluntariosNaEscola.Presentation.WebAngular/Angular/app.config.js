@@ -23,7 +23,18 @@ function config($routeProvider, $httpProvider) {
             templateUrl: './Views/Auth/Register.html',
             controller: 'UsuarioController'
         })
-        .when('/voluntario-home',
+        .when('/admin/home',
+        {
+            templateUrl: './Views/Administrador/Index.html',
+            controller: 'AdministradorHomeController',
+            resolve: { isAuthenticated: isAuthenticated }
+        })
+        .when('/admin/edit/:id', {
+            templateUrl: './Views/Administrador/Edit.html',
+            controller: 'AdministradorEditController',
+            resolve: { isAuthenticated: isAuthenticated }
+        })
+        .when('/voluntario/home',
         {
             templateUrl: './Views/Voluntario/Index.html',
             controller: 'VoluntarioHomeController',
@@ -34,7 +45,7 @@ function config($routeProvider, $httpProvider) {
             controller: 'VoluntarioEditController',
             resolve: { isAuthenticated: isAuthenticated }
         })
-         .when('/escola-home',
+         .when('/escola/home',
         {
             templateUrl: './Views/Escola/Index.html',
             controller: 'EscolaHomeController',
@@ -45,6 +56,14 @@ function config($routeProvider, $httpProvider) {
             controller: 'EscolaEditController',
             resolve: { isAuthenticated: isAuthenticated }
         })
+         .when('/supervisor/home', {
+             templateUrl: './Views/Supervisor/Index.html',
+             controller: 'SupervisorHomeController'
+         })
+         .when('/supervisor/edit/:id', {
+             templateUrl: './Views/Supervisor/New.html',
+             controller: 'SupervisorEditController'
+         })
           .when('/supervisor/novo/:id', {
               templateUrl: './Views/Supervisor/New.html',
               controller: 'SupervisorNovoController'

@@ -48,25 +48,15 @@
   <ItemGroup>
     <Content Include="Angular\app.base.js" />
     <Content Include="Angular\app.config.js" />
+    <Content Include="Angular\Controllers\Administrador\EditController.js" />
+    <Content Include="Angular\Controllers\Administrador\HomeController.js" />
     <Content Include="Angular\Controllers\Supervisor\EditController.js" />
     <Content Include="Angular\Controllers\Supervisor\HomeController.js" />
     <Content Include="Angular\Controllers\Supervisor\NewController.js" />
-    <Content Include="Angular\Controllers\Category\CategoryAddController.js" />
-    <Content Include="Angular\Controllers\Category\CategoryController.js" />
-    <Content Include="Angular\Controllers\Category\CategoryEditController.js" />
-    <Content Include="Angular\Controllers\Category\ModalCategoryAddController.js" />
-    <Content Include="Angular\Controllers\Contact\ContactAddController.js" />
-    <Content Include="Angular\Controllers\Contact\ContactController.js" />
-    <Content Include="Angular\Controllers\Contact\ContactEditController.js" />
-    <Content Include="Angular\Controllers\Contact\ModalContactAddController.js" />
     <Content Include="Angular\Controllers\Diretor\EditController.js" />
     <Content Include="Angular\Controllers\Diretor\HomeController.js" />
     <Content Include="Angular\Controllers\Escola\EditController.js" />
     <Content Include="Angular\Controllers\Escola\HomeController.js" />
-    <Content Include="Angular\Controllers\Group\GroupAddController.js" />
-    <Content Include="Angular\Controllers\Group\GroupController.js" />
-    <Content Include="Angular\Controllers\Group\GroupEditController.js" />
-    <Content Include="Angular\Controllers\Group\ModalGroupAddController.js" />
     <Content Include="Angular\Controllers\HomeController.js" />
     <Content Include="Angular\Controllers\LoginController.js" />
     <Content Include="Angular\Controllers\Project\ProjectAddController.js" />
@@ -74,10 +64,6 @@
     <Content Include="Angular\Controllers\Project\ProjectViewController.js" />
     <Content Include="Angular\Controllers\Project\UploadController.js" />
     <Content Include="Angular\Controllers\RootController.js" />
-    <Content Include="Angular\Controllers\Technology\ModalTechnologyAddController.js" />
-    <Content Include="Angular\Controllers\Technology\TechnologyAddController.js" />
-    <Content Include="Angular\Controllers\Technology\TechnologyController.js" />
-    <Content Include="Angular\Controllers\Technology\TechnologyEditController.js" />
     <Content Include="Angular\Controllers\User\UsuarioController.js" />
     <Content Include="Angular\Controllers\Voluntario\EditController.js" />
     <Content Include="Angular\Controllers\Voluntario\HomeController.js" />
@@ -201,24 +187,18 @@
     <Content Include="Scripts\switchery.min.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\underscore-min.js" />
+    <Content Include="Views\Administrador\Edit.html" />
+    <Content Include="Views\Administrador\Index.html" />
     <Content Include="Views\Supervisor\Edit.html" />
     <Content Include="Views\Supervisor\Index.html" />
     <Content Include="Views\Supervisor\New.html" />
-    <Content Include="Views\Category\Edit.html" />
-    <Content Include="Views\Category\Index.html" />
-    <Content Include="Views\Contact\Edit.html" />
-    <Content Include="Views\Contact\Index.html" />
     <Content Include="Views\Escola\Edit.html" />
     <Content Include="Views\Escola\Index.html" />
-    <Content Include="Views\Group\Edit.html" />
-    <Content Include="Views\Group\Index.html" />
     <Content Include="Views\Auth\Login.html" />
     <Content Include="Views\Modal\UploadFiles.html" />
     <Content Include="Views\Modal\_Delete.html" />
     <Content Include="Views\Shared\Menu.html" />
     <Content Include="Views\Shared\TopNavigation.html" />
-    <Content Include="Views\Technology\Edit.html" />
-    <Content Include="Views\Technology\Index.html" />
     <Content Include="Views\Auth\Register.html" />
   </ItemGroup>
   <ItemGroup>

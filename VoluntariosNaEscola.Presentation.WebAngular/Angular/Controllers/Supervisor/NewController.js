@@ -59,6 +59,8 @@ function homeCtrl($scope, $routeParams, $rootScope, $location, ngDialog, supervi
         console.log(entity);
     }
 
+  
+
     function aprovarEvento(result) {
         notificationService.displaySuccess('Sua opinião foi registrada com sucesso, continue seu cadastro.');
     }

@@ -26,13 +26,16 @@ function loginCtrl($scope, membershipService, $rootScope, $location, notificatio
             console.log(result.data.isVoluntario, result.data.isAdmin);
             
             if (result.data.isAdmin == 'True') {
-                $location.path('/');
+                $location.path('/admin/home');
             }
             else if (result.data.isVoluntario == 'True') {
                 console.log('isVoluntario');
-                $location.path('/voluntario-home');
+                $location.path('/voluntario/home');
             }
-            else $location.path('/escola-home');
+            else if (result.data.isSupervisor) {
+
+            }
+            else $location.path('/escola/home');
 
 
         }

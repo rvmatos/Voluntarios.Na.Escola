@@ -36,6 +36,27 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
 
         $scope.convite = {};
     }
+
+    $scope.GetQtdEmAberto = function (aprovadores) {
+        var qtd = 0;
+        $.each(aprovadores, function (index, entity) {
+            if (!entity.conviteAceito)
+                qtd++;
+        });
+        console.log(aprovadores);
+        return qtd;
+    }
+
+    $scope.GetQtdAprovados = function (aprovadores) {
+        var qtd = 0;
+        $.each(aprovadores, function (index, entity) {
+            if (entity.diretorAprovado)
+                qtd++;           
+        });
+        console.log(aprovadores);
+        return qtd;
+    }
+
     $scope.PermiteReenviar = function (convite) {
 
         if (convite.dtEnvio != null) {
