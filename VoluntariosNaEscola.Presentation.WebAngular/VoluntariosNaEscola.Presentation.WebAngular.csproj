@@ -192,6 +192,7 @@
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Views\Administrador\Edit.html" />
     <Content Include="Views\Administrador\Index.html" />
+    <Content Include="Views\Blank.html" />
     <Content Include="Views\Evento\Edit.html" />
     <Content Include="Views\Evento\New.html" />
     <Content Include="Views\Supervisor\Edit.html" />

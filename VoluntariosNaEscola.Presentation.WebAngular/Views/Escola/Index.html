@@ -9,9 +9,9 @@
     <div class="clearfix"></div>
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="x_panel">             
+            <div class="x_panel">
                 <div class="x_content">
-                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">                        
+                    <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
                         <h3>{{escola.nome}}</h3>
                         <ul class="list-unstyled user_data">
                             <li>
@@ -26,7 +26,7 @@
                             </li>
                         </ul>
                         <a class="btn btn-success" href="#/escola/edit/{{escola.id}}"><i class="fa fa-edit m-right-xs"></i>Edit Profile</a>
-                        <br />                     
+                        <br />
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         <div class="profile_title">
@@ -42,7 +42,7 @@
                         </div>
                         <div class="" role="tabpanel" data-example-id="togglable-tabs">
                             <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                        
+
                                 <li ng-if="!escola.diretor.aprovado" role="presentation" class="active">
                                     <a href="/#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Meus Aprovadores</a>
                                 </li>
@@ -55,8 +55,8 @@
                             </ul>
                             <div id="myTabContent" class="tab-content">
                                 <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content1" ng-class="!escola.diretor.aprovado ? 'active in' : ''" aria-labelledby="home-tab">
-                                   
-                                    
+
+
                                     <form class="form-horizontal form-label-left input_mask" ng-init="convite.idDiretor = escola.idDiretor">
                                         <h2>Para liberar a àrea de eventos você precisa de 5 aprovadores.</h2>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
@@ -124,18 +124,17 @@
                                         </tbody>
                                     </table>
                                     <!-- end user projects -->
-                                     <!-- start recent activity -->
-                                 
+                                    <!-- start recent activity -->
                                     <!-- end recent activity -->
                                 </div>
                                 <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content2" ng-class="escola.diretor.aprovado ? 'active in' : ''" aria-labelledby="home-tab">
-                                  
+
                                     <div class="form-group">
                                         <div class="col-md-12">
                                             <a href="#/evento/novo/{{escola.id}}" class="btn btn-success" style="float:right;">Criar Evento</a>
                                         </div>
                                     </div>
-                                      <ul class="messages" ng-repeat="evento in escola.eventos">
+                                    <ul class="messages" ng-repeat="evento in escola.eventos">
                                         <li>
                                             <div class="message_date">
                                                 <h3 class="date text-info">{{evento.dtInicio | date: 'dd'}}</h3>
@@ -150,10 +149,35 @@
                                     </ul>
                                 </div>
                                 <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                    <div class="row">
 
+
+                                        <div class="clearfix"></div>
+                                        <div ng-repeat="voluntario in escola.voluntarios">
+                                            <div class="col-md-4 col-sm-4 col-xs-12 profile_details">
+                                                <div class="well profile_view">
+                                                    <div class="col-sm-12">
+                                                        <h4 class="brief"><i>{{voluntario.profissao}}</i></h4>
+                                                        <div class="left col-xs-7">
+                                                            <h2>{{voluntario.nome}}</h2>                                                            
+                                                            <ul class="list-unstyled">
+                                                                <li><i class="fa fa-building"></i> {{voluntario.endereco.rua}}</li>
+                                                                <li><i class="fa fa-phone"></i> {{voluntario.telefone}} </li>
+                                                                <li><i class="fa fa-envelope"></i> {{voluntario.email}} </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="right col-xs-5 text-center">
+                                                            <img src="./Content/Images/user.png" alt="" class="img-circle img-responsive">
+                                                        </div>
+                                                    </div>                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
                                 <div ng-if="!escola.diretor.aprovado" role="tabpanel" class="tab-pane fade active in" id="tab_content2" aria-labelledby="profile-tab">
-                                 
+
                                 </div>
                             </div>
                         </div>

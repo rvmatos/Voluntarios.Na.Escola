@@ -9,8 +9,8 @@ namespace VoluntariosNaEscola.Domain.Entities
             Escolas = new HashSet<Escola>();
             Eventos = new HashSet<Evento>();
         }
-        public ICollection<Escola> Escolas { get; set; }     
-        public ICollection<Evento>  Eventos { get; set; }
+        public virtual ICollection<Escola> Escolas { get; set; }     
+        public virtual ICollection<Evento>  Eventos { get; set; }
 
     }
 }

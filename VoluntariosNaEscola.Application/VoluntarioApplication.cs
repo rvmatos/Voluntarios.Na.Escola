@@ -1,6 +1,8 @@
-﻿using VoluntariosNaEscola.Domain.Entities;
+﻿using System;
+using VoluntariosNaEscola.Domain.Entities;
 using VoluntariosNaEscola.Domain.Interfaces.Application;
 using VoluntariosNaEscola.Domain.Interfaces.Service;
+using VoluntariosNaEscola.Domain.Validations;
 
 namespace VoluntariosNaEscola.Application
 {
@@ -23,6 +25,11 @@ namespace VoluntariosNaEscola.Application
             {
                 return false;
             }
+        }
+
+        public ValidationResult VincularEscola(int idEscola, int idVoluntario)
+        {
+            return _service.VincularEscola(idEscola, idVoluntario);
         }
     }
 }

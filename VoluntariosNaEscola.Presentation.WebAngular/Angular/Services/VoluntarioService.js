@@ -9,7 +9,8 @@ function voluntarioService(appService, $http, $cookieStore, $rootScope, notifica
         getById: getById,
         insert: insert,
         update: update,
-        remove: remove
+        remove: remove,
+        vincularEscola: vincularEscola
     }
 
     function getAll(completed) {
@@ -45,6 +46,15 @@ function voluntarioService(appService, $http, $cookieStore, $rootScope, notifica
         appService.post('voluntarios/delete/' + id, null,
         completed,
         removeFalied);
+    }
+
+    function vincularEscola(idEscola, idVoluntario) {
+        appService.post('voluntarios/vincularescola?idEscola=' + idEscola + '&idVoluntario=' + idVoluntario, null,
+            function (result) {
+                notificationService.displaySuccess('Escola vinculada com sucesso.');
+            }, function (result) {
+                notificationService.displayErrorWithTille('Falha ao tentar remover um voluntário', response.data.errors);
+            })
     }
 
 

@@ -6,14 +6,29 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, UsuarioService,  $fil
    
     $scope.loadProfile = function () {
 
-        console.log($rootScope.repository.loggedUser);
-        UsuarioService.getById($rootScope.repository.loggedUser.userid, completedLoad);
+        var userLogged = $rootScope.repository.loggedUser;
+
+        if (userLogged.isAdmin == 'True') {
+            console.log(result.data.isVoluntario, result.data.isAdmin);
+            $location.path('/admin/home');
+        }
+        else if (userLogged.isVoluntario == 'True') {
+            console.log('isVoluntario');
+            $location.path('/voluntario/home');
+        }
+        else if (userLogged.isSupervisor == 'True') {
+            console.log('supervisor/home');
+        }
+        else if (userLogged.isDiretor) {
+            console.log("escola/home");
+            $location.path('/escola/home');
+
+        } else {
+            $location.path('/login');
+        }
     }
 
-    function completedLoad(result) {
-        console.log(result);
-    }
-
+    $scope.loadProfile();
 
 };
 

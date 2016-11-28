@@ -6,7 +6,7 @@ function editCtrl($scope, $routeParams, escolaService, $location, $rootScope, $c
     $scope.action = 'U';
     $scope.id = $routeParams.id;
     $scope.Save = Save;
-    $scope.userLogged = $rootScope.repository.loggedUser;
+   
 
     function loadData() {
         escolaService.getById($scope.id, completed);

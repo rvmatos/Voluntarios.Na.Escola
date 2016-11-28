@@ -12,6 +12,7 @@ using VoluntariosNaEscola.Domain.Interfaces.AppService;
 
 namespace VoluntariosNaEscola.AppService.Core.Controller
 {
+    [Authorize]
     public class ConviteAprovacaoController : BaseController<ConviteAprovacao>, IConviteAprovacaoAppService
     {
         private readonly IConviteAprovacaoApplication _appBase;

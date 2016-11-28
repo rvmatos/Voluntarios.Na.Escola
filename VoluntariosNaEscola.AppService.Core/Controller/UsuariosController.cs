@@ -12,6 +12,7 @@ using VoluntariosNaEscola.Domain.Interfaces.AppService;
 
 namespace VoluntariosNaEscola.AppService.Core.Controller
 {
+    [Authorize]
     public class UsuariosController : BaseController<Usuario>, IUsuarioAppService
     {
         private readonly IUsuarioApplication _application;

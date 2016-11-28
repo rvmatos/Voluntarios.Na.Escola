@@ -12,9 +12,9 @@ namespace VoluntariosNaEscola.Domain.Entities
         }
         public virtual Endereco Endereco { get; set; }        
         public int IdEndereco { get; set; } 
-        public ICollection<Escola> Escolas { get; set; }
+        public virtual ICollection<Escola> Escolas { get; set; }
 
-        public ICollection<Evento> Eventos { get; set; }
+        public virtual ICollection<Evento> Eventos { get; set; }
 
         public ICollection<Habilidade> Habilidades { get; set; }
     }

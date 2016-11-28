@@ -6,5 +6,6 @@ namespace VoluntariosNaEscola.Domain.Interfaces.Repository
 {
     public interface IVoluntarioRepository : IDisposable, IRepository<Voluntario>
     {
+        bool VincularEscola(int idEscola, int idVoluntario);
     }
 }

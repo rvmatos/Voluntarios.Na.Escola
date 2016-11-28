@@ -35,9 +35,9 @@ namespace VoluntariosNaEscola.Domain.Entities
 
         public ICollection<Habilidade> HabilidadesRequeridas { get; set; }
 
-        public ICollection<Supervisor> Supervisores { get; set; }
+        public virtual ICollection<Supervisor> Supervisores { get; set; }
 
-        public ICollection<Voluntario> Voluntarios { get; set; }
+        public virtual ICollection<Voluntario> Voluntarios { get; set; }
 
         public ICollection<Acao> Acoes{get; set;}
     }

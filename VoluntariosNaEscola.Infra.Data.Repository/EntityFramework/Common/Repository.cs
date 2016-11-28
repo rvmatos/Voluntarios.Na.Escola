@@ -10,7 +10,7 @@ namespace VoluntariosNaEscola.Infra.Data.Repository.EntityFramework.Common
 {
     public class Repository<TEntity> : IRepository<TEntity>, IDisposable where TEntity : class
     {
-        private readonly VoluntariadoContext _dbContext;
+        public readonly VoluntariadoContext _dbContext;
 
         private readonly IDbSet<TEntity> _dbSet;
 

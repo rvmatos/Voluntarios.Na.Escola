@@ -10,6 +10,7 @@ using VoluntariosNaEscola.Domain.Interfaces.AppService;
 
 namespace VoluntariosNaEscola.AppService.Core.Controller
 {
+    [Authorize]
     public class EscolasController : BaseController<Escola>, IEscolaAppService
     {
         private readonly IEscolaApplication _app;
