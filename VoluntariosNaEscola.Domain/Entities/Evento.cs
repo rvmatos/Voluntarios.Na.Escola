@@ -27,7 +27,7 @@ namespace VoluntariosNaEscola.Domain.Entities
 
         public DateTime DtInicio { get; set; }
 
-        public DateTime? DtTerminino { get; set; }
+        public DateTime? DtTermino { get; set; }
 
         public int? NroMinimoVoluntarios { get; set; }
 

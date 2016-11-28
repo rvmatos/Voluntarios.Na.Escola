@@ -23,7 +23,7 @@ function contactCtrl($scope, $routeParams, voluntarioService, $location, $rootSc
     }
 
     function completedChange() {
-        $location.path('/voluntario-home');
+        $location.path('/voluntario/home');
     }
 
     loadData();

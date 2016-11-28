@@ -1,0 +1,248 @@
+﻿<div class="">
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Form Wizards <small>Sessions</small></h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+
+
+                    <!-- Smart Wizard -->
+                    <p>This is a basic form wizard example that inherits the colors from the selected scheme.</p>
+                    <div id="wizard_verticle" class="form_wizard wizard_verticle">
+                        <ul class="list-unstyled wizard_steps">
+                            <li>
+                                <a href="#step-11">
+                                    <span class="step_no">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#step-22">
+                                    <span class="step_no">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#step-33">
+                                    <span class="step_no">3</span>
+                                </a>
+                            </li>
+
+                        </ul>
+                        <div id="step-11">
+                            <form id="frmLoginDadosPessoais" name="frmLoginDadosPessoais" class="form-horizontal" form-validate data-parsley-validate="" novalidate autocomplete="off">
+                                <h2 class="StepTitle">Dados do Evento</h2>
+
+
+                                <div class="form-group" ng-init="evento.idEscola = escola.id">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Nome da Escola
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" readonly="readonly" ng-model="escola.nome" required="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Nome do Diretor
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" readonly="readonly" placeholder="Diretor" ng-model="escola.diretor.nome" required="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Nome do Evento <span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" data-parsley-required-message="Nome do evento." ng-model="evento.nome" required="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Descrição do Evento<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <textarea rows="3" maxlength="250" class="form-control" ng-model="evento.descricao" required="" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="step-22">
+                            <form id="frmLoginEndereco" name="frmLoginEndereco" class="form-horizontal" autocomplete="off">
+                                <h2 class="StepTitle">Agenda do Evento</h2>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Dt. Inicio<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" data-inputmask="'mask' : '99/99/9999'" ng-model="evento.dtInicio" required="" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Dt. Término<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" data-inputmask="'mask' : '99/99/9999'" placeholder="" ng-model="evento.dtTermino" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Nro Mínimo de Voluntários<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="" maxlength="3" data-inputmask="'mask' : '999'" ng-model="evento.nroMinimoVoluntarios" required="" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Nro Máximo de Voluntários<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" maxlength="3" data-inputmask="'mask' : '999'" ng-model="evento.nroMaximoVoluntarios" required="" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div id="step-33">
+                            <h2 class="StepTitle">A&ccedil;&otilde;es</h2>
+                            <form class="form-horizontal">
+                                
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Nome<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="" ng-model="acao.nome" required="" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Descri&ccedil;&atilde;o<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <textarea rows="3" class="form-control" placeholder="" ng-model="acao.descricao" required="" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="voluntarioName">
+                                        Objetivo<span class="required">*</span>
+                                    </label>
+                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                        <input type="text" class="form-control" placeholder="" ng-model="acao.objetivo" required="" />
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="button" class="btn btn-success" ng-click="addAcao(acao)" style="float:right;">Adicionar</button>
+                                    </div>
+                                </div>
+                                <div class="ln_solid"></div>
+                            </form>
+                            <!-- start user projects -->
+                            <table class="data table table-striped no-margin">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Nome</th>
+                                        <th>Descrição</th>
+                                        <th>Objetivo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="acao in evento.acoes">
+                                        <td>{{$index}}</td>
+                                        <td>{{acao.nome}}</td>
+                                        <td>{{acao.descricao}}</td>
+                                        <td>{{acao.objetivo}}</td>
+                                        <td>
+
+                                            <button type="button" ng-disabled="{{convite.id != null}}" ng-cl ng-click="ExcluirConvite(convite)"
+                                                    class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após aceitação do convite, não poderá ser excluído.">
+                                                Excluir
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                            <!-- end user projects -->
+
+                        </div>
+
+                    </div>
+                </div>
+                <input type="button" id="btnCreate" ng-click="create(evento)" style="display:none;" />
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#wizard_verticle').smartWizard({
+            onLeaveStep: leaveAStepCallback,
+            onFinish: onFinishCallback,
+            labelNext: 'Próximo',
+            labelPrevious: 'Anterior',
+            labelFinish: 'Salvar',
+            transitionEffect: 'slide'
+        });
+
+
+        $('.buttonNext').addClass('btn btn-success');
+        $('.buttonPrevious').addClass('btn btn-primary');
+        $('.buttonFinish').addClass('btn btn-default');
+
+        function leaveAStepCallback(obj, context) {
+            //  alert("Leaving step " + context.fromStep + " to go to step " + context.toStep);
+            return validateSteps(context.fromStep); // return false to stay on step and true to continue navigation
+        }
+
+        function onFinishCallback(objs, context) {
+            if (validateAllSteps()) {
+                $('#btnCreate').trigger('click');
+            }
+        }
+
+        // Your Step validation logic
+        function validateSteps(stepnumber) {
+            var isStepValid = true;
+            // validate step 1
+            //if (form.$valid)
+
+
+            if (stepnumber == 1 && !$('#frmLoginDadosPessoais').parsley().validate()) {
+                // Your step validation logic
+                // set isStepValid = false if has errors
+                isStepValid = false;
+            }
+            else if (stepnumber == 2 && !$('#frmLoginEndereco').parsley().validate()) {
+                // Your step validation logic
+                // set isStepValid = false if has errors
+                isStepValid = false;
+            }
+            //else if (stepnumber == 3 && !$('#frmLoginDadosAutenticacao').parsley().validate()) {
+            //    isStepValid = false;
+            //}
+            return isStepValid;
+        }
+        function validateAllSteps() {
+            var isStepValid = true;
+            // all step validation logic
+            if (!$('#frmLoginDadosPessoais').parsley().validate() || !$('#frmLoginEndereco').parsley().validate())
+                isStepValid = false;
+            return isStepValid;
+        }
+    });
+</script>

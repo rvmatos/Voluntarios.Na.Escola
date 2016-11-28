@@ -1,7 +1,7 @@
 ﻿appDataBase.controller('EscolaHomeController', homeCtrl);
 
-homeCtrl.$inject = ['$scope', '$rootScope', '$location', 'ngDialog', 'EscolaService', 'ConviteAprovacaoService', 'NotificationService', '$filter'];
-function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, conviteAprovacaoService, notificationService, $filter) {
+homeCtrl.$inject = ['$scope', '$rootScope', '$location', 'ngDialog', 'EscolaService', 'ConviteAprovacaoService', 'EventoService', 'NotificationService', '$filter'];
+function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, conviteAprovacaoService, eventoService, notificationService, $filter) {
 
     $scope.escola = { diretor: { aprovadores: [] } };
     $scope.userLogged = $rootScope.repository.loggedUser;
@@ -28,7 +28,7 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
     }
 
     $scope.addConvite = function () {
-      
+
 
         var convite = { nome: $scope.convite.nome, email: $scope.convite.email, idDiretor: $scope.escola.idDiretor };
 
@@ -51,7 +51,7 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
         var qtd = 0;
         $.each(aprovadores, function (index, entity) {
             if (entity.diretorAprovado)
-                qtd++;           
+                qtd++;
         });
         console.log(aprovadores);
         return qtd;
@@ -61,9 +61,9 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
 
         if (convite.dtEnvio != null) {
             var d1 = new Date();
-            var d2 = getDate(convite.dtEnvio);           
+            var d2 = getDate(convite.dtEnvio);
             d2.setHours(d2.getHours() + 1);
-           
+
 
             if (d1 > d2)
                 return true;
@@ -91,13 +91,16 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
     }
 
     function completedLoad(result) {
-        
+
         $scope.escola = result.data;
+        console.log('completedLoad', result.data);
         $scope.loadConvites($scope.escola.idDiretor);
+        eventoService.getByIdEscola($scope.escola.id, function (result) { $scope.escola.eventos = result.data; })
     }
+
     function completedLoadConvites(result) {
         $scope.escola.diretor.aprovadores = result.data;
-        
+
     }
     function excluirSuccess() {
         notificationService.displaySuccess('Convite excluido com sucesso.');
@@ -105,7 +108,7 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, EscolaService, convit
     }
 
     function reenviarSuccess(result) {
-        
+
         notificationService.displaySuccess('Email reeenviado com sucesso.');
         $scope.loadConvites(result.data.model.idDiretor);
     }

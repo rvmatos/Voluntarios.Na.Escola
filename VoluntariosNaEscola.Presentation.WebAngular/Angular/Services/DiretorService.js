@@ -9,7 +9,8 @@ function diretorService(appService, $http, $cookieStore, $rootScope, notificatio
         getById: getById,
         insert: insert,
         update: update,
-        remove: remove
+        remove: remove,
+        aprovarDiretor:aprovarDiretor
     }
 
     function getAll(completed) {
@@ -47,7 +48,17 @@ function diretorService(appService, $http, $cookieStore, $rootScope, notificatio
         removeFalied);
     }
 
+    function aprovarDiretor(id)
+    {
+        appService.post('diretores/aprovardiretor/' + id, null,
+            function () {
+                notificationService.displaySuccess('Diretor aprovado!!');
+            }, function (response) {
+                notificationService.displayErrorWithTille('Falha ao tentar remover um(a) diretor(a)', response.data.errors);
 
+            });
+    }
+    
     function removeFalied(response) {
 
         notificationService.displayErrorWithTille('Falha ao tentar remover um(a) diretor(a)', response.data.errors);

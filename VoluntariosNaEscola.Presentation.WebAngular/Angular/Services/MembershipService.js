@@ -18,7 +18,7 @@ function membershipService(apiService, Constants, $http, $cookieStore, $rootScop
             url: Constants.HostHttp + 'security/TOKEN',
             method: "POST",
             data: $.param({ grant_type: 'password', username: userlogin.username, password: userlogin.password }),
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded'},
         }).then(completed, loginFailed);
 
 

@@ -8,6 +8,8 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, usuarioService, escol
     $scope.diretores = [];
     $scope.entity = {};
 
+
+
     $scope.loadInit = function () {
         diretorService.getAll(completedDiretorLoad);
         escolaService.getAll(completedEscolaLoad)
@@ -15,8 +17,10 @@ function homeCtrl($scope, $rootScope, $location, ngDialog, usuarioService, escol
         usuarioService.getById($rootScope.repository.loggedUser.userid, completedLoad)
     }
 
-    $scope.loadEscolas = function () {
-        escolaService.getAll(completedEscolaLoad);
+    
+
+    $scope.AprovarDiretor = function (idDiretor) {
+        diretorService.aprovarDiretor(idDiretor);
     }
 
     function completedLoad(result) {

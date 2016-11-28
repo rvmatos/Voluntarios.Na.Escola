@@ -3,7 +3,7 @@
 appDataBase.constant('Constants',
 
     {
-       // HostHttp: 'http://www.doublesilva.com/ulbra/service/api/',
+        //HostHttp: 'http://www.doublesilva.com/ulbra/service/api/',
         HostHttp: 'http://localhost/voluntariosnaweb/api/',
         DevelopmentType: [
            { id: 0, name: "" },

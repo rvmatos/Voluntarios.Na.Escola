@@ -22,7 +22,7 @@ function editCtrl($scope, $routeParams, diretorService, $location, $rootScope, $
     }
 
     function completedChange() {
-        $location.path('/escola-home');
+        $location.path('/escola/home');
     }
 
     loadData();

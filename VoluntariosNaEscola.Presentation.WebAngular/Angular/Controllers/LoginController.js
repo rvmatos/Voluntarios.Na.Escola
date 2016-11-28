@@ -23,19 +23,25 @@ function loginCtrl($scope, membershipService, $rootScope, $location, notificatio
             $scope.user.nome = result.data.username;
             membershipService.saveCredentials(result.data);
             $scope.userData.displayUserInfo();
-            console.log(result.data.isVoluntario, result.data.isAdmin);
+           
+            console.log('usuario-logado', result.data)
             
             if (result.data.isAdmin == 'True') {
+                console.log(result.data.isVoluntario, result.data.isAdmin);
                 $location.path('/admin/home');
             }
             else if (result.data.isVoluntario == 'True') {
                 console.log('isVoluntario');
                 $location.path('/voluntario/home');
             }
-            else if (result.data.isSupervisor) {
-
+            else if (result.data.isSupervisor == 'True') {
+                console.log('supervisor/home');
             }
-            else $location.path('/escola/home');
+            else {
+                console.log("escola/home");
+                $location.path('/escola/home');
+                
+            }
 
 
         }

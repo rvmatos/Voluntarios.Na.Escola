@@ -50,6 +50,8 @@
     <Content Include="Angular\app.config.js" />
     <Content Include="Angular\Controllers\Administrador\EditController.js" />
     <Content Include="Angular\Controllers\Administrador\HomeController.js" />
+    <Content Include="Angular\Controllers\Evento\EditController.js" />
+    <Content Include="Angular\Controllers\Evento\NewController.js" />
     <Content Include="Angular\Controllers\Supervisor\EditController.js" />
     <Content Include="Angular\Controllers\Supervisor\HomeController.js" />
     <Content Include="Angular\Controllers\Supervisor\NewController.js" />
@@ -78,6 +80,7 @@
     <Content Include="Angular\Directives\tooltips.js" />
     <Content Include="Angular\Interceptors\loadingStatusInterceptor.js" />
     <Content Include="Angular\Services\AppService.js" />
+    <Content Include="Angular\Services\EventoService.js" />
     <Content Include="Angular\Services\SupervisorService.js" />
     <Content Include="Angular\Services\ConviteAprovacaoService.js" />
     <Content Include="Angular\Services\EscolaService.js" />
@@ -189,6 +192,8 @@
     <Content Include="Scripts\underscore-min.js" />
     <Content Include="Views\Administrador\Edit.html" />
     <Content Include="Views\Administrador\Index.html" />
+    <Content Include="Views\Evento\Edit.html" />
+    <Content Include="Views\Evento\New.html" />
     <Content Include="Views\Supervisor\Edit.html" />
     <Content Include="Views\Supervisor\Index.html" />
     <Content Include="Views\Supervisor\New.html" />
@@ -201,9 +206,7 @@
     <Content Include="Views\Shared\TopNavigation.html" />
     <Content Include="Views\Auth\Register.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\FileInfo\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />

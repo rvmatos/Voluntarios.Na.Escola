@@ -58,7 +58,7 @@
                                                 <th>Direto Email</th>
                                                 <th>Diretor Nome</th>                                               
                                                 <th>Diretor Aprovado?</th>
-                                                <th>Ações</th>
+                                                <th>#</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -67,14 +67,31 @@
                                                 <td>{{escola.nome}}</td>
                                                 <td>{{escola.diretor.email}}</td>
                                                 <td>{{escola.diretor.nome}}</td>
-                                                <td>{{convite.diretor.aprovado ? 'Sim' : 'Não'}}</td>                                                
+                                                <td>{{escola.diretor.aprovado ? 'Sim' : 'Não'}}</td>                                                
                                                 <td>                                                
 
-                                                    <button type="button" ng-show="userLogged.isAdmin == 'True'" ng-click="ConfirmarConvite(convite)"
-                                                            class="btn btn-link" data-toggle="tooltip" data-placement="top" title="Após enviar convite, aguardar 1 hora para nova tentiva.">
-                                                        Reenviar
-                                                    </button>
-
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-danger">Ações</button>
+                                                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            <span class="caret"></span>
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">                                                           
+                                                            <li>
+                                                                <a  href="#/escola/edit/{{escola.id}}">Editar</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#/">Excluir</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href="#/">Desativar</a>
+                                                            </li>
+                                                            <li ng-show="escola.diretor.aprovado" class="divider"></li>
+                                                            <li ng-show="escola.diretor.aprovado">
+                                                                <a ng-click="AprovarDiretor(escola.diretor.id)" href="#/admin/home">Aprovar Diretor</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
 
 
                                                 </td>

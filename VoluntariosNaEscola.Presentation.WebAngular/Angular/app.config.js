@@ -5,12 +5,13 @@ appDataBase.config(config)
        .run(run);
 
 function config($routeProvider, $httpProvider) {
-
+ 
     $httpProvider.interceptors.push('loadingStatusInterceptor');
-
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     $routeProvider
         .when('/home', {
-            templateUrl: './Views/Home.html',
+            templateUrl: './Index.html',
             controller: 'HomeController',
             resolve: { isAuthenticated: isAuthenticated }
         })
@@ -68,82 +69,14 @@ function config($routeProvider, $httpProvider) {
               templateUrl: './Views/Supervisor/New.html',
               controller: 'SupervisorNovoController'
           })
-
-       
-        //  .when('/project/view/:id', {
-        //      templateUrl: './Views/Project.html',
-        //      controller: 'ProjectViewController',
-        //      resolve: { isAuthenticated: isAuthenticated }
-        //  })
-        //.when('/project/new', {
-        //    templateUrl: './Views/Project.html',
-        //    controller: 'ProjectAddController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/categories',
-        //{
-        //    templateUrl: './Views/Category/Index.html',
-        //    controller: 'CategoryController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/categories/new', {
-        //    templateUrl: './Views/Category/Edit.html',
-        //    controller: 'CategoryAddController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/categories/edit/:id', {
-        //    templateUrl: './Views/Category/Edit.html',
-        //    controller: 'CategoryEditController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        // .when('/groups',
-        //{
-        //    templateUrl: './Views/Group/Index.html',
-        //    controller: 'GroupController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/groups/new', {
-        //    templateUrl: './Views/Group/Edit.html',
-        //    controller: 'GroupAddController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/groups/edit/:id', {
-        //    templateUrl: './Views/Group/Edit.html',
-        //    controller: 'GroupEditController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        // .when('/technologies',
-        //{
-        //    templateUrl: './Views/Technology/Index.html',
-        //    controller: 'TechnologyController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/technologies/new', {
-        //    templateUrl: './Views/Technology/Edit.html',
-        //    controller: 'TechnologyAddController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/technologies/edit/:id', {
-        //    templateUrl: './Views/Technology/Edit.html',
-        //    controller: 'TechnologyEditController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //  .when('/contacts',
-        //{
-        //    templateUrl: './Views/Contact/Index.html',
-        //    controller: 'ContactController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/contacts/new', {
-        //    templateUrl: './Views/Contact/Edit.html',
-        //    controller: 'ContactAddController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
-        //.when('/contacts/edit/:id', {
-        //    templateUrl: './Views/Contact/Edit.html',
-        //    controller: 'ContactEditController',
-        //    resolve: { isAuthenticated: isAuthenticated }
-        //})
+        .when('/evento/novo/:id', {
+            templateUrl: './Views/Evento/New.html',
+            controller: 'EventoNewController'
+        })
+        .when('/evento/edit/:id', {
+            templateUrl: './Views/Evento/Edit.html',
+            controller: 'EventoEditController'
+        })
 
      .otherwise({ redirectTo: '/home' });
 }
