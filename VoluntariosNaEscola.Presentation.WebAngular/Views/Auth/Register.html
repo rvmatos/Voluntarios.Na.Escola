@@ -35,64 +35,64 @@
 
         </ul>
         <div id="step-11">
-            <form id="frmLoginDadosPessoais" name="frmLoginDadosPessoais" autocomplete="off">
+            <form id="frmLoginDadosPessoais" name="frmLoginDadosPessoais" form-validate data-parsley-validate="" novalidate autocomplete="off">
                 <h2 class="StepTitle">Dados Pessoais</h2>
 
                 <div ng-if="usuario.isVoluntario">
                     <div>
-                        <input type="text" class="form-control" placeholder="Nome" ng-model="usuario.nome" required="" />
+                        <input type="text" class="form-control" data-parsley-required-message="Campo nome é obrigatório." placeholder="Nome" ng-model="usuario.nome" required="" />
                     </div>
                 </div>
                 <div ng-if="!usuario.isVoluntario">
                     <div>
-                        <input type="text" class="form-control" placeholder="Nome Escola" ng-model="usuario.nomeEscola" required="" />
+                        <input type="text" class="form-control" data-parsley-required-message="Campo nome da escola é obrigatório." placeholder="Nome da Escola" ng-model="usuario.nomeEscola" required="" />
                     </div>
                     <div>
-                        <input type="text" class="form-control" placeholder="Nome Diretor" ng-model="usuario.nomeDiretor" required="" />
+                        <input type="text" class="form-control" data-parsley-required-message="Campo nome do diretor é obrigatório." placeholder="Nome do Diretor" ng-model="usuario.nomeDiretor" required="" />
                     </div>
                 </div>
                 <div>
-                    <input type="text" class="form-control" data-inputmask="'mask' : '(99) 9999 9999'" placeholder="Telefone" ng-model="usuario.telefone" required="" />
+                    <input type="text" class="form-control" data-parsley-required-message="Campo telefone é obrigatório." data-inputmask="'mask' : '(99) 9999 9999'" placeholder="Telefone" ng-model="usuario.telefone" required="" />
                 </div>
                 <div ng-if="usuario.isVoluntario">
-                    <input type="text" class="form-control" placeholder="Profissão" ng-model="usuario.profissao" required="" />
+                    <input type="text" class="form-control" data-parsley-required-message="Campo profissão é obrigatório." placeholder="Profissão" ng-model="usuario.profissao" required="" />
                 </div>
             </form>
         </div>
         <div id="step-22">
-            <form id="frmLoginEndereco" name="frmLoginEndereco" autocomplete="off">
+            <form id="frmLoginEndereco" name="frmLoginEndereco" form-validate data-parsley-validate="" novalidate autocomplete="off">
                 <h2 class="StepTitle">Endere&ccedil;o {{usuario.isVoluntario ? '' : 'da Escola'}}</h2>
                 <div>
-                    <input type="text" class="form-control" placeholder="Endereço" ng-model="usuario.endereco.rua" required="" />
+                    <input type="text" class="form-control" data-parsley-required-message="Campo endereço é obrigatório." placeholder="Endereço" ng-model="usuario.endereco.rua" required="" />
                 </div>
                 <div>
                     <input type="text" class="form-control" placeholder="Complemento" ng-model="usuario.endereco.complemento" />
                 </div>
                 <div>
-                    <input type="text" class="form-control" data-inputmask="'mask' : '99999-999'" placeholder="Cep" ng-model="usuario.endereco.cep" required="" />
+                    <input type="text" class="form-control" data-parsley-required-message="Campo cep é obrigatório." data-inputmask="'mask' : '99999-999'" placeholder="Cep" ng-model="usuario.endereco.cep" required="" />
                 </div>
                 <div>
-                    <input type="text" class="form-control" placeholder="Cidade" ng-model="usuario.endereco.cidade" required="" />
+                    <input type="text" class="form-control" data-parsley-required-message="Campo cidade é obrigatório." placeholder="Cidade" ng-model="usuario.endereco.cidade" required="" />
                 </div>
                 <div>
-                    <input type="text" class="form-control" placeholder="Sigla Estado" ng-model="usuario.endereco.estado" required="" />
+                    <input type="text" class="form-control" data-parsley-maxlength="2" data-parsley-required-message="Campo sigla estado é obrigatório." maxlength="2"  placeholder="Sigla Estado" ng-model="usuario.endereco.estado" required="" />
                 </div>
             </form>
         </div>
         <div id="step-33">
             <h2 class="StepTitle">Autentica&ccedil;&atilde;o</h2>
-            <form id="frmLoginDadosAutenticacao" name="frmLoginDadosAutenticacao" autocomplete="off">
+            <form id="frmLoginDadosAutenticacao" name="frmLoginDadosAutenticacao" form-validate data-parsley-validate="" novalidate autocomplete="off">
                 <div>
-                    <input type="text" class="form-control" placeholder="Apelido" ng-model="usuario.apelido" required="" />
+                    <input type="text" class="form-control" data-parsley-required-message="Campo apelido é obrigatório." placeholder="Apelido" ng-model="usuario.apelido" required="" />
                 </div>
                 <div>
-                    <input type="email" class="form-control" placeholder="Email" ng-model="usuario.email" required="" />
+                    <input type="email" data-parsley-type="email" class="form-control" data-parsley-type-message="Informe um email válido." data-parsley-required-message="Campo email é obrigatório." placeholder="Email" ng-model="usuario.email" required="" />
                 </div>
                 <div>
-                    <input type="password" class="form-control" placeholder="Senha" ng-model="usuario.senha" required="" />
+                    <input type="password" class="form-control" data-parsley-required-message="Campo senha é obrigatório." id="txtSenha" placeholder="Senha" ng-model="usuario.senha" required="" />
                 </div>
                 <div>
-                    <input type="password" class="form-control" placeholder="Confirma Senha" ng-model="usuario.confirmaSenha" required="" />
+                    <input type="password" class="form-control"  data-parsley-required-message="Campo confirma senha é obrigatório."  data-parsley-equalto-message="Campo confirma senha deve ser igual a senha."  data-parsley-equalto="#txtSenha"  placeholder="Confirma Senha" ng-model="usuario.confirmaSenha" required="" />
                 </div>
             </form>
         </div>
@@ -147,17 +147,17 @@
         function validateSteps(stepnumber) {
             var isStepValid = true;
             // validate step 1
-            if (stepnumber == 1 && !$('#frmLoginDadosPessoais')[0].checkValidity()) {
+            if (stepnumber == 1 && !$('#frmLoginDadosPessoais').parsley().validate()) {
                 // Your step validation logic
                 // set isStepValid = false if has errors
                 isStepValid = false;
             }
-            else if (stepnumber == 2 && !$('#frmLoginEndereco')[0].checkValidity()) {
+            else if (stepnumber == 2 && !$('#frmLoginEndereco').parsley().validate()) {
                 // Your step validation logic
                 // set isStepValid = false if has errors
                 isStepValid = false;
             }
-            else if (stepnumber == 3 && !$('#frmLoginDadosAutenticacao')[0].checkValidity()) {
+            else if (stepnumber == 3 && !$('#frmLoginDadosAutenticacao').parsley().validate()) {
                 isStepValid = false;
             }
             return isStepValid;
@@ -165,7 +165,7 @@
         function validateAllSteps() {
             var isStepValid = true;
             // all step validation logic
-            if (!$('#frmLoginDadosPessoais')[0].checkValidity() || !$('#frmLoginEndereco')[0].checkValidity() || !$('#frmLoginDadosAutenticacao')[0].checkValidity())
+            if (!$('#frmLoginDadosPessoais').parsley().validate() || !$('#frmLoginEndereco').parsley().validate() || !$('#frmLoginDadosAutenticacao').parsley().validate())
                 isStepValid = false;
             return isStepValid;
         }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
@@ -18,7 +19,13 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
         {
             _app = app;
         }
-         
+
+        [AllowAnonymous]
+        public override HttpResponseMessage Add(Escola entity)
+        {
+            return base.Add(entity);
+        }
+
         [HttpGet]
         public Escola GetByDiretor(int idDiretor)
         {

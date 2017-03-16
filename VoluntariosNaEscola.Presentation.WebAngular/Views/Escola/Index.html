@@ -54,7 +54,7 @@
                                 </li>
                             </ul>
                             <div id="myTabContent" class="tab-content">
-                                <div ng-if="escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content1" ng-class="!escola.diretor.aprovado ? 'active in' : ''" aria-labelledby="home-tab">
+                                <div ng-if="!escola.diretor.aprovado" role="tabpanel" class="tab-pane fade" id="tab_content1" ng-class="!escola.diretor.aprovado ? 'active in' : ''" aria-labelledby="home-tab">
 
 
                                     <form class="form-horizontal form-label-left input_mask" ng-init="convite.idDiretor = escola.idDiretor">
@@ -175,10 +175,7 @@
                                         </div>
 
                                     </div>
-                                </div>
-                                <div ng-if="!escola.diretor.aprovado" role="tabpanel" class="tab-pane fade active in" id="tab_content2" aria-labelledby="profile-tab">
-
-                                </div>
+                                </div>                               
                             </div>
                         </div>
                     </div>

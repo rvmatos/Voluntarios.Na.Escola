@@ -22,6 +22,12 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
             _appEscola = appEscola;
         }
 
+        [AllowAnonymous]
+        public override HttpResponseMessage Add(Voluntario entity)
+        {
+            return base.Add(entity);
+        }
+
 
         public HttpResponseMessage VincularEscola(int idEscola, int idVoluntario)
         {

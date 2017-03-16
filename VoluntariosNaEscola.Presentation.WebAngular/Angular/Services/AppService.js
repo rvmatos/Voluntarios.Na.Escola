@@ -1,8 +1,8 @@
 ﻿appDataBase.factory('AppService', appService);
 
-appService.$inject = ['$http', 'Constants', '$location', '$rootScope', '$cookieStore'];
+appService.$inject = ['$http', 'Constants', '$location', '$rootScope', '$cookieStore', 'NotificationService'];
 
-function appService($http, Constants, $location,  $rootScope, $cookieStore) {
+function appService($http, Constants, $location, $rootScope, $cookieStore, notificationService) {
     var service = {
         get: get,
         post: post,

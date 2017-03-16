@@ -20,13 +20,13 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
         {
             _appBase = appBase;
         }
-
+        [AllowAnonymous]
         public HttpResponseMessage GetByGuid(string id)
         {
             var result = _appBase.Find(x => x.ChaveConfirmacao.ToString().Equals(id)).FirstOrDefault();
             return Request.CreateResponse(System.Net.HttpStatusCode.OK, result);
         }
-
+        [AllowAnonymous]
         public HttpResponseMessage GetConvitesBy(int idDiretor)
         {
             var result = _appBase.Find(x => x.IdDiretor == idDiretor);
@@ -42,6 +42,11 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
                 return Request.CreateResponse(System.Net.HttpStatusCode.OK, result);
             return Request.CreateResponse(System.Net.HttpStatusCode.InternalServerError, result);
 
+        }
+        [AllowAnonymous]
+        public override HttpResponseMessage Update(ConviteAprovacao entity)
+        {
+            return base.Update(entity);
         }
     }
 }

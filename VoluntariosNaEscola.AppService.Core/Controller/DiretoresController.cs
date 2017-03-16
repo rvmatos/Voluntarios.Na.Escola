@@ -19,7 +19,7 @@ namespace VoluntariosNaEscola.AppService.Core.Controller
         {
             _app = app;
         }
-
+        [AllowAnonymous]
         public HttpResponseMessage AprovarDiretor(int id)
         {
             var diretor = _app.Get(id);

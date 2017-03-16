@@ -10,13 +10,13 @@ using VoluntariosNaEscola.Domain.Interfaces.AppService;
 
 namespace VoluntariosNaEscola.AppService.Core.Controller
 {
-    [Authorize]
+    [AllowAnonymous]
     public class SupervisorController : BaseController<Supervisor>, ISupervisorAppService
     {
         private readonly ISupervisorApplication _app;
         public SupervisorController(ISupervisorApplication app) : base(app)
         {
             _app = app;
-        }
+        }        
     }
 }
