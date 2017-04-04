@@ -1,16 +1,16 @@
 # Projeto Voluntários na Escola
 
 ## Visão Administrador  
-  Usuário: admin / Senha:102030 
+  * Usuário: admin / Senha:102030 
 
 ## Visão Escola/Diretor  
-  Usuário: escola01 / Senha: 102030 (Diretor Aprovado) 
-  Usuário: escola02 / Senha: 102030 (Diretor em aprovação) 
+  * Usuário: escola01 / Senha: 102030 (Diretor Aprovado) 
+  * Usuário: escola02 / Senha: 102030 (Diretor em aprovação) 
 
-## Visão Supervisor – 
+## Visão Supervisor
 
 ## Visão Voluntário 
-  Usuário: voluntario01 / Senha: 102030 
+  * Usuário: voluntario01 / Senha: 102030 
  
  
 ## Etapas para compilar e rodar arquivos 
@@ -24,6 +24,6 @@
 7. Realizar a complicação da solução
 8. Rodar primeiro a aplicação de Serviço (VoluntariosNaEscola.AppService.WebApi)
 9. Editar o arquivo VoluntariosNaEscola.Presentation.WebAngular/Angular/app.base.js
-  a. Atribuir o endereço local do serviço para a variável HostHttp  
+  1. Atribuir o endereço local do serviço para a variável HostHttp  
 10. Após rodar o projeto web (VoluntariosNaEscola.Presentation.WebAngular)
 11. Administrador - Usuário: Admin Senha : 102030 
