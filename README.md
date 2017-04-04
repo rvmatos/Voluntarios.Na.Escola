@@ -24,6 +24,6 @@
 7. Realizar a complicação da solução
 8. Rodar primeiro a aplicação de Serviço (VoluntariosNaEscola.AppService.WebApi)
 9. Editar o arquivo VoluntariosNaEscola.Presentation.WebAngular/Angular/app.base.js
-  1. Atribuir o endereço local do serviço para a variável HostHttp  
+  * Atribuir o endereço local do serviço para a variável HostHttp  
 10. Após rodar o projeto web (VoluntariosNaEscola.Presentation.WebAngular)
 11. Administrador - Usuário: Admin Senha : 102030 
