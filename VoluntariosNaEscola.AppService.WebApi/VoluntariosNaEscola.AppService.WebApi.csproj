@@ -207,7 +207,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50260</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/voluntariosnaweb/</IISUrl>
+          <IISUrl>http://localhost/voluntariosservice/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

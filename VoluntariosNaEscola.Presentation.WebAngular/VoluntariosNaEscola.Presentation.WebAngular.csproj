@@ -247,8 +247,8 @@
   <ItemGroup>
     <Content Include="Views\Voluntario\Edit.html" />
     <Content Include="Views\Voluntario\Index.html" />
-    <Content Include="web.config" />
     <None Include="Properties\PublishProfiles\ulbra-web.pubxml" />
+    <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -271,7 +271,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>52007</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/voluntariosnaescola/web/</IISUrl>
+          <IISUrl>http://localhost/voluntariosweb/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

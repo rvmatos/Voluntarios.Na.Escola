@@ -68,13 +68,9 @@
     <Compile Include="Mapping\SupervisorMap.cs" />
     <Compile Include="Mapping\UsuarioMap.cs" />
     <Compile Include="Mapping\VoluntarioMap.cs" />
-    <Compile Include="Migrations\201611200044546_UpdateConvite.cs" />
-    <Compile Include="Migrations\201611200044546_UpdateConvite.Designer.cs">
-      <DependentUpon>201611200044546_UpdateConvite.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611272315253_ChangeName.cs" />
-    <Compile Include="Migrations\201611272315253_ChangeName.Designer.cs">
-      <DependentUpon>201611272315253_ChangeName.cs</DependentUpon>
+    <Compile Include="Migrations\201704042118157_InitDB.cs" />
+    <Compile Include="Migrations\201704042118157_InitDB.Designer.cs">
+      <DependentUpon>201704042118157_InitDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,11 +91,8 @@
     <Folder Include="Config\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611200044546_UpdateConvite.resx">
-      <DependentUpon>201611200044546_UpdateConvite.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611272315253_ChangeName.resx">
-      <DependentUpon>201611272315253_ChangeName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704042118157_InitDB.resx">
+      <DependentUpon>201704042118157_InitDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
