@@ -82,7 +82,7 @@ namespace VoluntariosNaEscola.AppService.WebApi.Authorization
 
                 var identity = new ClaimsIdentity(context.Options.AuthenticationType);
                 identity.AddClaim(new Claim(ClaimTypes.Name, usuario.Nome));
-                identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, usuario.Email));
+                //identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, usuario.Email));
                 identity.AddClaim(new Claim(ClaimTypes.PrimarySid, usuario.Id.ToString()));
 
                 var roles = new List<string>();
