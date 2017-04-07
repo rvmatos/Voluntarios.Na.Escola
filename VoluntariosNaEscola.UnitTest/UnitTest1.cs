@@ -26,19 +26,19 @@ namespace VoluntariosNaEscola.UnitTest
             var mailSender = kernel.Get<IVoluntarioService>();
             mailSender.Add(new Domain.Entities.Voluntario()
             { 
-                Email = "silva.pucrs@gmail.com",
-                Nome = "Diego Silva",
+                Email = "rvmatos@gmail.com",
+                Nome = "Reinaldo Vieira Matos",
                 DtNascimento = new System.DateTime(1987, 3, 28),
                 Senha = "102030",
                 Profissao = "Estudante",
-                Telefone = "(51) 85077222",
+                Telefone = "(51) 818197979",
                 Endereco = new Domain.Entities.Endereco()
                 {
-                    Cep = "91430260",
+                    Cep = "91130480",
                     Cidade = "Porto Alegre",
                     Estado = "RS",
-                    Rua = "Rua 5, 571",
-                    Complemento = "Cefer 2"
+                    Rua = "Zeferino Dias, 171",
+                    Complemento = "Apt"
                 }                
             });
         

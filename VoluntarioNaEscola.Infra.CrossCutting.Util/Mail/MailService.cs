@@ -13,10 +13,10 @@ namespace VoluntarioNaEscola.Infra.CrossCutting.Util.Mail
         private string smtpAddress;
         private int portNumber;
         private bool enableSSL = true;
-        private string emailFrom = "silva.pucrs@gmail.com";
-        private string password = "lapro203";
+        private string emailFrom = "rvmatos@latam.stefanini.com";
+        private string password = "Ad107135!";
 
-        public MailService(string smtpAddress = "smtp.live.com", int portNumber = 587, bool enableSSL = true)
+        public MailService(string smtpAddress = "smtp.office365.com", int portNumber = 587, bool enableSSL = true)
         {
             this.smtpAddress = smtpAddress;
             this.portNumber = portNumber;
