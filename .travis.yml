@@ -2,11 +2,11 @@ language: c
 solution: VoluntariosNaEscola.sln
 
 install:
-- sudo apt-get install mono-devel mono-gmcs nunit-console
-- nuget # lets get version number
-- nuget restore VoluntariosNaEscola.sln -Verbosity detailed
-- nuget update VoluntariosNaEscola.sln -Verbosity detailed
-#- travis_retry nuget restore -source "https://www.nuget.org/api/v2" VoluntariosNaEscola.sln
+- sudo apt-get install mono-devel mono-gmcs nunit-console nuget
+#- nuget  lets get version number
+#- nuget restore VoluntariosNaEscola.sln -Verbosity detailed
+#- nuget update VoluntariosNaEscola.sln -Verbosity detailed
+- travis_retry nuget restore -source "https://www.nuget.org/api/v2" VoluntariosNaEscola.sln
 
 script:
 - xbuild VoluntariosNaEscola.sln
