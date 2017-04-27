@@ -3,11 +3,11 @@ solution: VoluntariosNaEscola.sln
 
 install:
 - sudo apt-get install mono-complete mono-devel mono-gmcs nunit-console
-- wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+#- wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 #- mono nuget.exe  # lets get version number
-- mono nuget.exe restore VoluntariosNaEscola.sln -Verbosity detailed
-- mono nuget.exe update VoluntariosNaEscola.sln -Verbosity detailed
-#- travis_retry nuget restore -source "https://www.nuget.org/api/v2" VoluntariosNaEscola.sln
+#- mono nuget.exe restore VoluntariosNaEscola.sln -Verbosity detailed
+#- mono nuget.exe update VoluntariosNaEscola.sln -Verbosity detailed
+- travis_retry nuget restore -source "https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" VoluntariosNaEscola.sln
 
 script:
 - xbuild VoluntariosNaEscola.sln
